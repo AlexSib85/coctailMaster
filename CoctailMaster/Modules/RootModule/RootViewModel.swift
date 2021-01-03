@@ -9,11 +9,15 @@ import Foundation
 
 class RootViewModel {
 
+    private var networkManager: NetworkManager = AppContainer.shared.resolve()
+
     func viewLoaded() {
         loadData()
     }
 
     private func loadData() {
-        NetworkManager.shared.loadList()
+        networkManager.loadList { strings in
+            print(strings)
+        }
     }
 }

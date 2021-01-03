@@ -7,19 +7,18 @@
 
 import Alamofire
 
-class NetworkManager {
-    static let shared = NetworkManager()
+protocol NetworkManager {
+    func loadList(closure: @escaping ([String]) -> Void)
+}
 
-    private init() {
-
-    }
-
+class NetworkManagerImpl: NetworkManager {
     let path: String = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
     let path2 = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a"
 
-    func loadList() {
+    func loadList(closure: @escaping ([String]) -> Void) {
         AF.request(path).response { response in
             debugPrint(response)
+            closure(["1", "2"])
         }
     }
 }

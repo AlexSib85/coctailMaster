@@ -1,24 +1,32 @@
 PODS:
   - Alamofire (5.4.1)
+  - DITranquillity (4.1.7):
+    - SwiftLazy (>= 1.1.6)
   - R.swift (5.3.1):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - SwiftLazy (1.1.7)
 
 DEPENDENCIES:
   - Alamofire
+  - DITranquillity
   - R.swift
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DITranquillity
     - R.swift
     - R.swift.Library
+    - SwiftLazy
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  DITranquillity: 1cc4481cb316b8f142248d5dfd6e545d73714e7c
   R.swift: 56ec7e3aef34b9eee47a659e42462db2c1cc5ac3
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  SwiftLazy: dcb1edc6c2b633ba2e68f28554d9dd6d1c0bfd13
 
-PODFILE CHECKSUM: 5ec346bdfe5e71b4418511c90ea426b93eaeb5f0
+PODFILE CHECKSUM: a3cece2a6b6849bfb27254b96afa3089174e5523
 
 COCOAPODS: 1.10.0

@@ -21,6 +21,9 @@
 		93363EEB2565AA65007F522D /* AutolayoutWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363EEA2565AA65007F522D /* AutolayoutWrapper.swift */; };
 		93363F0B2565AE9F007F522D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363F0A2565AE9F007F522D /* NetworkManager.swift */; };
 		93857AAF2565B18F00221DDD /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93857AAE2565B18F00221DDD /* RootViewModel.swift */; };
+		93D1A7E025A1EB950077BB1D /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1A7DC25A1EB950077BB1D /* AppContainer.swift */; };
+		93D1A7E125A1EB950077BB1D /* AppFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1A7DD25A1EB950077BB1D /* AppFramework.swift */; };
+		93D1A80825A1EF7E0077BB1D /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1A80725A1EF7E0077BB1D /* CommonUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		93363EF92565ACFA007F522D /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 		93363F0A2565AE9F007F522D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		93857AAE2565B18F00221DDD /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		93D1A7DC25A1EB950077BB1D /* AppContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		93D1A7DD25A1EB950077BB1D /* AppFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFramework.swift; sourceTree = "<group>"; };
+		93D1A80725A1EF7E0077BB1D /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		E7C63E56772337399B3E8A04 /* Pods-CoctailMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailMaster.debug.xcconfig"; path = "Target Support Files/Pods-CoctailMaster/Pods-CoctailMaster.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,11 +126,12 @@
 		93363E5C2565A815007F522D /* CoctailMaster */ = {
 			isa = PBXGroup;
 			children = (
-				93BC90D825A19DF7007EB91A /* SupportingFiles */,
+				93D1A7DA25A1EB870077BB1D /* DI */,
+				93363E662565A815007F522D /* Assets.xcassets */,
+				93BC90D425A19DAB007EB91A /* ExtensionsAndUtils */,
 				93BC90D725A19DE4007EB91A /* Managers */,
 				93BC90D525A19DBF007EB91A /* Modules */,
-				93BC90D425A19DAB007EB91A /* Extensions */,
-				93363E662565A815007F522D /* Assets.xcassets */,
+				93BC90D825A19DF7007EB91A /* SupportingFiles */,
 			);
 			path = CoctailMaster;
 			sourceTree = "<group>";
@@ -157,12 +164,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		93BC90D425A19DAB007EB91A /* Extensions */ = {
+		93BC90D425A19DAB007EB91A /* ExtensionsAndUtils */ = {
 			isa = PBXGroup;
 			children = (
 				93363EEA2565AA65007F522D /* AutolayoutWrapper.swift */,
+				93D1A80725A1EF7E0077BB1D /* CommonUtils.swift */,
 			);
-			path = Extensions;
+			path = ExtensionsAndUtils;
 			sourceTree = "<group>";
 		};
 		93BC90D525A19DBF007EB91A /* Modules */ = {
@@ -201,6 +209,15 @@
 				93363E6B2565A815007F522D /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		93D1A7DA25A1EB870077BB1D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				93D1A7DC25A1EB950077BB1D /* AppContainer.swift */,
+				93D1A7DD25A1EB950077BB1D /* AppFramework.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		FE8BA8F8BAAECEC0B3E17C5C /* Pods */ = {
@@ -433,9 +450,12 @@
 				93363E622565A815007F522D /* RootViewController.swift in Sources */,
 				93363EAE2565A97E007F522D /* RootCoordinator.swift in Sources */,
 				93363EEB2565AA65007F522D /* AutolayoutWrapper.swift in Sources */,
+				93D1A80825A1EF7E0077BB1D /* CommonUtils.swift in Sources */,
 				93363F0B2565AE9F007F522D /* NetworkManager.swift in Sources */,
 				93363EB32565A998007F522D /* Coordinator.swift in Sources */,
+				93D1A7E125A1EB950077BB1D /* AppFramework.swift in Sources */,
 				93363E5E2565A815007F522D /* AppDelegate.swift in Sources */,
+				93D1A7E025A1EB950077BB1D /* AppContainer.swift in Sources */,
 				93857AAF2565B18F00221DDD /* RootViewModel.swift in Sources */,
 				93363E602565A815007F522D /* SceneDelegate.swift in Sources */,
 			);

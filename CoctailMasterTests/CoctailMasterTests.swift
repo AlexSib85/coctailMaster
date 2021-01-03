@@ -10,24 +10,36 @@ import XCTest
 
 class CoctailMasterTests: XCTestCase {
 
+    var rootModel: RootViewModel!
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        AppContainer.shared.register { NetworkManagerTestImpl() }
+            .as(NetworkManager.self)
+            .lifetime(.single)
+            .test()
+        rootModel = RootViewModel()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        rootModel = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLoading() throws {
+        let expectation = self.expectation(description: "Expect")
+        rootModel.viewLoaded()
+        delay(1) {
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertEqual(true, true)
     }
+}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+class NetworkManagerTestImpl: NetworkManager {
+
+    func loadList(closure: @escaping ([String]) -> Void) {
+        delay(0.1) {
+            closure(["5", "6"])
         }
     }
-
 }
