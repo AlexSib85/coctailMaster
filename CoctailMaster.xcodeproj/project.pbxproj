@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		259793BC36D9E87A62809DD1 /* libPods-CoctailMasterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E469835762DF08DC6A291BE /* libPods-CoctailMasterTests.a */; };
+		28678CB1205B2AFBE596E48F /* libPods-CoctailMaster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B06A2371A8F9D1A0C0AEF82 /* libPods-CoctailMaster.a */; };
 		93363E5E2565A815007F522D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E5D2565A815007F522D /* AppDelegate.swift */; };
 		93363E602565A815007F522D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E5F2565A815007F522D /* SceneDelegate.swift */; };
-		93363E622565A815007F522D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E612565A815007F522D /* ViewController.swift */; };
-		93363E652565A815007F522D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93363E632565A815007F522D /* Main.storyboard */; };
+		93363E622565A815007F522D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E612565A815007F522D /* RootViewController.swift */; };
 		93363E672565A815007F522D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93363E662565A815007F522D /* Assets.xcassets */; };
 		93363E6A2565A815007F522D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93363E682565A815007F522D /* LaunchScreen.storyboard */; };
 		93363E752565A816007F522D /* CoctailMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E742565A816007F522D /* CoctailMasterTests.swift */; };
 		93363E802565A816007F522D /* CoctailMasterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E7F2565A816007F522D /* CoctailMasterUITests.swift */; };
+		93363EAE2565A97E007F522D /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363EAD2565A97E007F522D /* RootCoordinator.swift */; };
+		93363EB32565A998007F522D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363EB22565A998007F522D /* Coordinator.swift */; };
+		93363EEB2565AA65007F522D /* AutolayoutWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363EEA2565AA65007F522D /* AutolayoutWrapper.swift */; };
+		93363F0B2565AE9F007F522D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363F0A2565AE9F007F522D /* NetworkManager.swift */; };
+		93857AAF2565B18F00221DDD /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93857AAE2565B18F00221DDD /* RootViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B06A2371A8F9D1A0C0AEF82 /* libPods-CoctailMaster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoctailMaster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2174CAFF1C537064D4F3580C /* Pods-CoctailMasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailMasterTests.release.xcconfig"; path = "Target Support Files/Pods-CoctailMasterTests/Pods-CoctailMasterTests.release.xcconfig"; sourceTree = "<group>"; };
+		6228CF659E5FF1A3F12B3BD0 /* Pods-CoctailMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailMaster.release.xcconfig"; path = "Target Support Files/Pods-CoctailMaster/Pods-CoctailMaster.release.xcconfig"; sourceTree = "<group>"; };
+		6CD49FA5E1124582E95E2925 /* Pods-CoctailMasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailMasterTests.debug.xcconfig"; path = "Target Support Files/Pods-CoctailMasterTests/Pods-CoctailMasterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6E469835762DF08DC6A291BE /* libPods-CoctailMasterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoctailMasterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93363E5A2565A815007F522D /* CoctailMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoctailMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93363E5D2565A815007F522D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93363E5F2565A815007F522D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		93363E612565A815007F522D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		93363E642565A815007F522D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93363E612565A815007F522D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		93363E662565A815007F522D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93363E692565A815007F522D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93363E6B2565A815007F522D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +59,13 @@
 		93363E7B2565A816007F522D /* CoctailMasterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoctailMasterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93363E7F2565A816007F522D /* CoctailMasterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailMasterUITests.swift; sourceTree = "<group>"; };
 		93363E812565A816007F522D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93363EAD2565A97E007F522D /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		93363EB22565A998007F522D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		93363EEA2565AA65007F522D /* AutolayoutWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutWrapper.swift; sourceTree = "<group>"; };
+		93363EF92565ACFA007F522D /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
+		93363F0A2565AE9F007F522D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		93857AAE2565B18F00221DDD /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		E7C63E56772337399B3E8A04 /* Pods-CoctailMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailMaster.debug.xcconfig"; path = "Target Support Files/Pods-CoctailMaster/Pods-CoctailMaster.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28678CB1205B2AFBE596E48F /* libPods-CoctailMaster.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				259793BC36D9E87A62809DD1 /* libPods-CoctailMasterTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +102,8 @@
 				93363E732565A816007F522D /* CoctailMasterTests */,
 				93363E7E2565A816007F522D /* CoctailMasterUITests */,
 				93363E5B2565A815007F522D /* Products */,
+				93363EF82565ACFA007F522D /* Frameworks */,
+				FE8BA8F8BAAECEC0B3E17C5C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +120,11 @@
 		93363E5C2565A815007F522D /* CoctailMaster */ = {
 			isa = PBXGroup;
 			children = (
-				93363E5D2565A815007F522D /* AppDelegate.swift */,
-				93363E5F2565A815007F522D /* SceneDelegate.swift */,
-				93363E612565A815007F522D /* ViewController.swift */,
-				93363E632565A815007F522D /* Main.storyboard */,
+				93BC90D825A19DF7007EB91A /* SupportingFiles */,
+				93BC90D725A19DE4007EB91A /* Managers */,
+				93BC90D525A19DBF007EB91A /* Modules */,
+				93BC90D425A19DAB007EB91A /* Extensions */,
 				93363E662565A815007F522D /* Assets.xcassets */,
-				93363E682565A815007F522D /* LaunchScreen.storyboard */,
-				93363E6B2565A815007F522D /* Info.plist */,
 			);
 			path = CoctailMaster;
 			sourceTree = "<group>";
@@ -128,6 +147,73 @@
 			path = CoctailMasterUITests;
 			sourceTree = "<group>";
 		};
+		93363EF82565ACFA007F522D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93363EF92565ACFA007F522D /* libswiftWebKit.tbd */,
+				1B06A2371A8F9D1A0C0AEF82 /* libPods-CoctailMaster.a */,
+				6E469835762DF08DC6A291BE /* libPods-CoctailMasterTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93BC90D425A19DAB007EB91A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				93363EEA2565AA65007F522D /* AutolayoutWrapper.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		93BC90D525A19DBF007EB91A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				93363EB22565A998007F522D /* Coordinator.swift */,
+				93BC90D625A19DC7007EB91A /* RootModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		93BC90D625A19DC7007EB91A /* RootModule */ = {
+			isa = PBXGroup;
+			children = (
+				93363EAD2565A97E007F522D /* RootCoordinator.swift */,
+				93363E612565A815007F522D /* RootViewController.swift */,
+				93857AAE2565B18F00221DDD /* RootViewModel.swift */,
+			);
+			path = RootModule;
+			sourceTree = "<group>";
+		};
+		93BC90D725A19DE4007EB91A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				93363F0A2565AE9F007F522D /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		93BC90D825A19DF7007EB91A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				93363E5D2565A815007F522D /* AppDelegate.swift */,
+				93363E5F2565A815007F522D /* SceneDelegate.swift */,
+				93363E682565A815007F522D /* LaunchScreen.storyboard */,
+				93363E6B2565A815007F522D /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		FE8BA8F8BAAECEC0B3E17C5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7C63E56772337399B3E8A04 /* Pods-CoctailMaster.debug.xcconfig */,
+				6228CF659E5FF1A3F12B3BD0 /* Pods-CoctailMaster.release.xcconfig */,
+				6CD49FA5E1124582E95E2925 /* Pods-CoctailMasterTests.debug.xcconfig */,
+				2174CAFF1C537064D4F3580C /* Pods-CoctailMasterTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93363E842565A816007F522D /* Build configuration list for PBXNativeTarget "CoctailMaster" */;
 			buildPhases = (
+				513E67E61790AF5A5DA7BA2F /* [CP] Check Pods Manifest.lock */,
 				93363E562565A815007F522D /* Sources */,
 				93363E572565A815007F522D /* Frameworks */,
 				93363E582565A815007F522D /* Resources */,
+				9388FCA325A1960000DB1816 /* SwiftLint autocorrect */,
+				9388FCA425A1961800DB1816 /* SwifLint Script */,
 			);
 			buildRules = (
 			);
@@ -152,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93363E872565A816007F522D /* Build configuration list for PBXNativeTarget "CoctailMasterTests" */;
 			buildPhases = (
+				81C2A3E0AD65B23650144F7D /* [CP] Check Pods Manifest.lock */,
 				93363E6C2565A816007F522D /* Sources */,
 				93363E6D2565A816007F522D /* Frameworks */,
 				93363E6E2565A816007F522D /* Resources */,
@@ -233,7 +323,6 @@
 			files = (
 				93363E6A2565A815007F522D /* LaunchScreen.storyboard in Resources */,
 				93363E672565A815007F522D /* Assets.xcassets in Resources */,
-				93363E652565A815007F522D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,13 +342,101 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		513E67E61790AF5A5DA7BA2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoctailMaster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81C2A3E0AD65B23650144F7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoctailMasterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9388FCA325A1960000DB1816 /* SwiftLint autocorrect */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint autocorrect";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint autocorrect\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		9388FCA425A1961800DB1816 /* SwifLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwifLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		93363E562565A815007F522D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93363E622565A815007F522D /* ViewController.swift in Sources */,
+				93363E622565A815007F522D /* RootViewController.swift in Sources */,
+				93363EAE2565A97E007F522D /* RootCoordinator.swift in Sources */,
+				93363EEB2565AA65007F522D /* AutolayoutWrapper.swift in Sources */,
+				93363F0B2565AE9F007F522D /* NetworkManager.swift in Sources */,
+				93363EB32565A998007F522D /* Coordinator.swift in Sources */,
 				93363E5E2565A815007F522D /* AppDelegate.swift in Sources */,
+				93857AAF2565B18F00221DDD /* RootViewModel.swift in Sources */,
 				93363E602565A815007F522D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +473,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		93363E632565A815007F522D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				93363E642565A815007F522D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		93363E682565A815007F522D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +590,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -433,11 +602,13 @@
 		};
 		93363E852565A816007F522D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7C63E56772337399B3E8A04 /* Pods-CoctailMaster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoctailMaster/Info.plist;
+				INFOPLIST_FILE = CoctailMaster/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,17 +616,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = alexsib.CoctailMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		93363E862565A816007F522D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6228CF659E5FF1A3F12B3BD0 /* Pods-CoctailMaster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoctailMaster/Info.plist;
+				INFOPLIST_FILE = CoctailMaster/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,14 +636,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = alexsib.CoctailMaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		93363E882565A816007F522D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CD49FA5E1124582E95E2925 /* Pods-CoctailMasterTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoctailMasterTests/Info.plist;
@@ -490,8 +663,8 @@
 		};
 		93363E892565A816007F522D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2174CAFF1C537064D4F3580C /* Pods-CoctailMasterTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoctailMasterTests/Info.plist;
@@ -512,7 +685,6 @@
 		93363E8B2565A816007F522D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoctailMasterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -531,7 +703,6 @@
 		93363E8C2565A816007F522D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoctailMasterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
