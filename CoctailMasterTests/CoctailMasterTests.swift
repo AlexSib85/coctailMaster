@@ -14,7 +14,7 @@ class CoctailMasterTests: XCTestCase {
 
     override func setUpWithError() throws {
         AppContainer.shared.register { NetworkManagerTestImpl() }
-            .as(NetworkManager.self)
+            .as(NetworkService.self)
             .lifetime(.single)
             .test()
         rootModel = RootViewModel()
@@ -35,7 +35,7 @@ class CoctailMasterTests: XCTestCase {
     }
 }
 
-class NetworkManagerTestImpl: NetworkManager {
+class NetworkManagerTestImpl: NetworkService {
 
     func loadList(closure: @escaping ([String]) -> Void) {
         delay(0.1) {

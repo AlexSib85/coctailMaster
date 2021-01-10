@@ -16,8 +16,12 @@ class RootCoordinator: Coordinator {
     }
 
     func start() {
-        let viewController = RootViewController()
-        viewController.viewModel = RootViewModel()
+        AppContainer.shared.register { RootViewModel(networkService: $0) }
+
+        AppContainer.shared.register(RootViewController.init)
+            .injection { $0.viewModel = $1 }
+
+        let viewController: RootViewController = AppContainer.shared.resolve()
         navigationController.pushViewController(viewController, animated: false)
     }
 }

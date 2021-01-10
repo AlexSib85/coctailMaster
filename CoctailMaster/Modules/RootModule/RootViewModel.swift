@@ -9,15 +9,31 @@ import Foundation
 
 class RootViewModel {
 
-    private var networkManager: NetworkManager = AppContainer.shared.resolve()
+    private var networkService: NetworkService
+
+    init(networkService: NetworkService) {
+        print("init RootViewModel")
+        self.networkService = networkService
+    }
 
     func viewLoaded() {
         loadData()
     }
 
     private func loadData() {
-        networkManager.loadList { strings in
-            print(strings)
+        networkService.loadIngridientList { drinks, error in
+            if let error = error {
+                print("Error!!!!!!!!!!!!!!!!! \(error)")
+                return
+            }
+            print(drinks)
+        }
+        networkService.loadRandom { drink, error in
+            if let error = error {
+                print("Error!!!!!!!!!!!!!!!!! \(error)")
+                return
+            }
+            print(drink)
         }
     }
 }
