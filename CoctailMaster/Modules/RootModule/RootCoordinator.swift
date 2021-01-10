@@ -16,7 +16,7 @@ class RootCoordinator: Coordinator {
     }
 
     func start() {
-        AppContainer.shared.register { RootViewModel(networkService: $0) }
+        AppContainer.shared.register { RootViewModel(dataService: $0) }
 
         AppContainer.shared.register(RootViewController.init)
             .injection { $0.viewModel = $1 }

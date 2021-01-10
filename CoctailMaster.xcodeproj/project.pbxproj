@@ -26,6 +26,7 @@
 		9357D5DE25AAEAE6003C9A3F /* Ingridients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D5DD25AAEAE6003C9A3F /* Ingridients.swift */; };
 		9357D5EB25AAF169003C9A3F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D5EA25AAF169003C9A3F /* Constants.swift */; };
 		9357D5F325AAF1EF003C9A3F /* RequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D5F225AAF1EF003C9A3F /* RequestList.swift */; };
+		936DC85325AB5DBE001B5717 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC85225AB5DBE001B5717 /* DataService.swift */; };
 		93857AAF2565B18F00221DDD /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93857AAE2565B18F00221DDD /* RootViewModel.swift */; };
 		93D1A7E025A1EB950077BB1D /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1A7DC25A1EB950077BB1D /* AppContainer.swift */; };
 		93D1A7E125A1EB950077BB1D /* AppFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1A7DD25A1EB950077BB1D /* AppFramework.swift */; };
@@ -79,6 +80,7 @@
 		9357D5DD25AAEAE6003C9A3F /* Ingridients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingridients.swift; sourceTree = "<group>"; };
 		9357D5EA25AAF169003C9A3F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9357D5F225AAF1EF003C9A3F /* RequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestList.swift; sourceTree = "<group>"; };
+		936DC85225AB5DBE001B5717 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		93857AAE2565B18F00221DDD /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		93D1A7DC25A1EB950077BB1D /* AppContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		93D1A7DD25A1EB950077BB1D /* AppFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFramework.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				93363F0A2565AE9F007F522D /* NetworkService.swift */,
+				936DC85225AB5DBE001B5717 /* DataService.swift */,
 				9357D5F225AAF1EF003C9A3F /* RequestList.swift */,
 			);
 			path = Services;
@@ -482,6 +485,7 @@
 				9357D5D925AAE965003C9A3F /* Ingridient.swift in Sources */,
 				9357D5EB25AAF169003C9A3F /* Constants.swift in Sources */,
 				93363EB32565A998007F522D /* Coordinator.swift in Sources */,
+				936DC85325AB5DBE001B5717 /* DataService.swift in Sources */,
 				93D1A7E125A1EB950077BB1D /* AppFramework.swift in Sources */,
 				9357D5C925A70DEE003C9A3F /* Drink.swift in Sources */,
 				9357D5F325AAF1EF003C9A3F /* RequestList.swift in Sources */,

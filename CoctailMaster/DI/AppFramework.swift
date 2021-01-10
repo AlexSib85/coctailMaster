@@ -9,8 +9,13 @@ import DITranquillity
 
 public class AppFramework: DIFramework {
     public static func load(container: DIContainer) {
+
         container.register { NetworkServiceImpl() }
             .as(NetworkService.self)
+            .lifetime(.single)
+
+        container.register { DataServiceImpl(networkService: $0) }
+            .as(DataService.self)
             .lifetime(.single)
     }
 }

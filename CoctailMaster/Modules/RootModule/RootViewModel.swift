@@ -9,11 +9,10 @@ import Foundation
 
 class RootViewModel {
 
-    private var networkService: NetworkService
+    private var dataService: DataService
 
-    init(networkService: NetworkService) {
-        print("init RootViewModel")
-        self.networkService = networkService
+    init(dataService: DataService) {
+        self.dataService = dataService
     }
 
     func viewLoaded() {
@@ -21,14 +20,14 @@ class RootViewModel {
     }
 
     private func loadData() {
-        networkService.loadIngridientList { drinks, error in
+        dataService.getIngridientList { ingridients, error in
             if let error = error {
                 print("Error!!!!!!!!!!!!!!!!! \(error)")
                 return
             }
-            print(drinks)
+            print(ingridients)
         }
-        networkService.loadRandom { drink, error in
+        dataService.getRandomDrink { drink, error in
             if let error = error {
                 print("Error!!!!!!!!!!!!!!!!! \(error)")
                 return

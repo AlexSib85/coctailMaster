@@ -14,39 +14,32 @@ enum NetworkError: Error {
 }
 
 protocol NetworkService {
-    func loadIngridientList(closure: @escaping ([Ingridient]?, Error?) -> Void)
-    func loadRandom(closure: @escaping (Drink?, Error?) -> Void)
+    func loadIngridientList(closure: @escaping (Ingridients?, Error?) -> Void)
+    func loadRandomDrink(closure: @escaping (Drinks?, Error?) -> Void)
 }
 
 class NetworkServiceImpl: NetworkService {
 
-    func loadIngridientList(closure: @escaping ([Ingridient]?, Error?) -> Void) {
-        AF.request(RequestList.ingridientsList)
-            .responseDecodable(of: Ingridients.self) { response in
-                if let error = response.error {
-                    closure(nil, error)
-                    return
-                }
-                guard let ingridients = response.value else {
-                    closure(nil, NetworkError.invalidResponse)
-                    return
-                }
-                closure(ingridients.ingridients, nil)
-            }
+    func loadIngridientList(closure: @escaping (Ingridients?, Error?) -> Void) {
+        loadRequest(request: RequestList.ingridientsList, closure: closure)
     }
 
-    func loadRandom(closure: @escaping (Drink?, Error?) -> Void) {
-        AF.request(RequestList.randomCoctail)
-            .responseDecodable(of: Drinks.self) { response in
+    func loadRandomDrink(closure: @escaping (Drinks?, Error?) -> Void) {
+        loadRequest(request: RequestList.randomCoctail, closure: closure)
+    }
+
+    private func loadRequest<T: Decodable>(request: RequestList, closure: @escaping (T?, Error?) -> Void) {
+        AF.request(request)
+            .responseDecodable(of: T.self) { response in
                 if let error = response.error {
                     closure(nil, error)
                     return
                 }
-                guard let drinks = response.value, let drink = drinks.drinks.first else {
+                guard let drinks = response.value else {
                     closure(nil, NetworkError.invalidResponse)
                     return
                 }
-                closure(drink, nil)
+                closure(drinks, nil)
             }
     }
 }

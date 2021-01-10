@@ -30,7 +30,7 @@ struct Drink: Codable {
     var strInstructionsZHHANS: String?
     var strInstructionsZHHANT: String?
     var strDrinkThumb: String?
-    var strIngredient1: Ingridient?
+    var strIngredient1: String?
     var strIngredient2: String?
     var strIngredient3: String?
     var strIngredient4: String?
@@ -87,7 +87,7 @@ struct Drink: Codable {
         self.strInstructionsZHHANS = strInstructionsZHHANS
         self.strInstructionsZHHANT = strInstructionsZHHANT
         self.strDrinkThumb = strDrinkThumb
-        self.strIngredient1 = Ingridient(strIngredient1: strIngredient1)
+        self.strIngredient1 = strIngredient1
         self.strIngredient2 = strIngredient2
         self.strIngredient3 = strIngredient3
         self.strIngredient4 = strIngredient4
