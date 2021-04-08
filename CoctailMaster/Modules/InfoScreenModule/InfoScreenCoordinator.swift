@@ -8,7 +8,7 @@
 import UIKit
 
 class InfoScreenCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
+    var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     weak var parentCoordinator: AppCoordinator?
 

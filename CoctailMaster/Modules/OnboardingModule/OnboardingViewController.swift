@@ -22,10 +22,6 @@ class OnboardingViewController: UIViewController {
         viewModel.viewLoaded()
     }
 
-    deinit {
-        print("DEINIT OnboardingViewController")
-    }
-
     private func setupUI() {
 
         view.backgroundColor = .commonBlue
@@ -36,21 +32,30 @@ class OnboardingViewController: UIViewController {
         view.addSubview(stackView)
 
         titleLabel.textAlignment = .center
+        titleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
+        titleLabel.numberOfLines = 0
+        titleLabel.textColor = .white
         stackView.addArrangedSubview(titleLabel)
 
         infoLabel.textAlignment = .center
+        infoLabel.font = .systemFont(ofSize: 16, weight: .semibold)
+        infoLabel.numberOfLines = 2
+        infoLabel.textColor = .white
         stackView.addArrangedSubview(infoLabel)
 
         button.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
-        stackView.addArrangedSubview(button)
+        view.addSubview(button)
 
         makeConstraints()
     }
 
     private func makeConstraints() {
-        stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
+        button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40).isActive = true
+        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 
     @objc

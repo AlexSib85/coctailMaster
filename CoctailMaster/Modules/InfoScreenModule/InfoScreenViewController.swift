@@ -22,7 +22,7 @@ class InfoScreenViewController: UIViewController {
 
     private func setupUI() {
 
-        view.backgroundColor = .green
+        view.backgroundColor = .lightPink
 
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing

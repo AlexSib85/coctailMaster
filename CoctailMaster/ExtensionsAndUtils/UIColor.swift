@@ -42,4 +42,7 @@ extension UIColor {
     }
 
     static let commonBlue = UIColor("#53ADF0")
+    static let lightBlue = UIColor("#d6ecfc")
+    static let lightMint = UIColor("#cbedcf")
+    static let lightPink = UIColor("#FFD3B5")
 }

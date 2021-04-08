@@ -9,7 +9,7 @@ import UIKit
 import SwiftyUserDefaults
 
 class OnboardingCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
+    var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     weak var parentCoordinator: AppCoordinator?
 
@@ -17,12 +17,8 @@ class OnboardingCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
-    deinit {
-        print("DEINIT OnboardingCoordinator")
-    }
-
     func start() {
-        AppContainer.shared.register { OnboardingViewModel(dataService: $0, coordinator: self) }
+        AppContainer.shared.register { [weak self] in return OnboardingViewModel(dataService: $0, coordinator: self) }
             .injection(cycle: true, \.output)
             .lifetime(.objectGraph)
 

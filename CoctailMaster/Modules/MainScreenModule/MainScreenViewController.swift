@@ -22,7 +22,7 @@ class MainScreenViewController: UIViewController {
 
     private func setupUI() {
 
-        view.backgroundColor = .green
+        view.backgroundColor = .lightBlue
 
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing

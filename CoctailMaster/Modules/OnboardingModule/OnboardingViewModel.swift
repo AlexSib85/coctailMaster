@@ -25,13 +25,9 @@ class OnboardingViewModel {
 
     var onboardingInfo: OnboardingInfo?
 
-    init(dataService: DataService, coordinator: OnboardingCoordinator) {
+    init(dataService: DataService, coordinator: OnboardingCoordinator?) {
         self.dataService = dataService
         self.coordinator = coordinator
-    }
-
-    deinit {
-        print("DEINIT OnboardingViewModel")
     }
 
     func viewLoaded() {

@@ -22,7 +22,7 @@ class SearchScreenViewController: UIViewController {
 
     private func setupUI() {
 
-        view.backgroundColor = .green
+        view.backgroundColor = .lightMint
 
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
