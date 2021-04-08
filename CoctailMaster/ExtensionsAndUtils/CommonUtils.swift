@@ -14,3 +14,9 @@ func delay(_ delay: Double, closure: @escaping () -> Void) {
 
 @available(iOS, deprecated: 1.0, message: "I'm not deprecated, please ***FIXME***")
 func FIXME() {}
+
+#if DEBUG
+    let IsDebugMode = true
+#else
+    let IsDebugMode = false
+#endif

@@ -6,26 +6,34 @@
 //
 
 import UIKit
+import DITranquillity
+import SwiftyUserDefaults
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var coordinator: RootCoordinator?
+    var coordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Defaults[\.needShowOnboarding] = true
+        if IsDebugMode {
+            do {
+                try R.validate()
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        }
 
         if #available(iOS 13.0, *) {
 
         } else {
-            let navigationController = UINavigationController()
-            coordinator = RootCoordinator(navigationController: navigationController)
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            coordinator = AppCoordinator(window: window)
             coordinator?.start()
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = navigationController
+            self.window = window
             self.window?.makeKeyAndVisible()
         }
-
         return true
     }
 }

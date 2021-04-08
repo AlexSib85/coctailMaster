@@ -10,23 +10,26 @@ import XCTest
 
 class CoctailMasterTests: XCTestCase {
 
-    var rootModel: RootViewModel!
+    var mainScreenModel: MainScreenViewModel!
 
     override func setUpWithError() throws {
-        AppContainer.shared.register { NetworkManagerTestImpl() }
-            .as(NetworkService.self)
+        AppContainer.shared.register { DataServiceTestImpl() }
+            .as(DataService.self)
             .lifetime(.single)
             .test()
-        rootModel = RootViewModel()
+        AppContainer.shared.register { MainScreenViewModel(dataService: $0) }
+            .lifetime(.objectGraph)
+
+        mainScreenModel = AppContainer.shared.resolve()
     }
 
     override func tearDownWithError() throws {
-        rootModel = nil
+        mainScreenModel = nil
     }
 
     func testLoading() throws {
         let expectation = self.expectation(description: "Expect")
-        rootModel.viewLoaded()
+        mainScreenModel.viewLoaded()
         delay(1) {
             expectation.fulfill()
         }
@@ -35,11 +38,14 @@ class CoctailMasterTests: XCTestCase {
     }
 }
 
-class NetworkManagerTestImpl: NetworkService {
-
-    func loadList(closure: @escaping ([String]) -> Void) {
+class DataServiceTestImpl: DataService {
+    func getIngridientList(closure: @escaping ([Ingridient]?, Error?) -> Void) {
         delay(0.1) {
-            closure(["5", "6"])
+            closure([Ingridient(strIngredient1: "1"), Ingridient(strIngredient1: "2")], nil)
         }
+    }
+
+    func getRandomDrink(closure: @escaping (Drink?, Error?) -> Void) {
+
     }
 }

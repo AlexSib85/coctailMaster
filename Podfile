@@ -7,6 +7,7 @@ target 'CoctailMaster' do
   pod 'Alamofire'
   pod 'R.swift'
   pod 'DITranquillity'
+  pod 'SwiftyUserDefaults'
 
   target 'CoctailMasterTests' do
     inherit! :search_paths

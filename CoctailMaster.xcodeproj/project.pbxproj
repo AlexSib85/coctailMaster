@@ -9,14 +9,20 @@
 /* Begin PBXBuildFile section */
 		259793BC36D9E87A62809DD1 /* libPods-CoctailMasterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E469835762DF08DC6A291BE /* libPods-CoctailMasterTests.a */; };
 		28678CB1205B2AFBE596E48F /* libPods-CoctailMaster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B06A2371A8F9D1A0C0AEF82 /* libPods-CoctailMaster.a */; };
+		931D944725AC13DE00C0DCD1 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D944425AC13DE00C0DCD1 /* MainScreenViewModel.swift */; };
+		931D944825AC13DE00C0DCD1 /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D944525AC13DE00C0DCD1 /* MainScreenCoordinator.swift */; };
+		931D944925AC13DE00C0DCD1 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D944625AC13DE00C0DCD1 /* MainScreenViewController.swift */; };
+		931D945025AC140200C0DCD1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D944D25AC140200C0DCD1 /* OnboardingViewController.swift */; };
+		931D945125AC140200C0DCD1 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D944E25AC140200C0DCD1 /* OnboardingCoordinator.swift */; };
+		931D945225AC140200C0DCD1 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D944F25AC140200C0DCD1 /* OnboardingViewModel.swift */; };
+		931D946525AC15E600C0DCD1 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D946425AC15E600C0DCD1 /* UserDefaults.swift */; };
 		93363E5E2565A815007F522D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E5D2565A815007F522D /* AppDelegate.swift */; };
 		93363E602565A815007F522D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E5F2565A815007F522D /* SceneDelegate.swift */; };
-		93363E622565A815007F522D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E612565A815007F522D /* RootViewController.swift */; };
 		93363E672565A815007F522D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93363E662565A815007F522D /* Assets.xcassets */; };
 		93363E6A2565A815007F522D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93363E682565A815007F522D /* LaunchScreen.storyboard */; };
 		93363E752565A816007F522D /* CoctailMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E742565A816007F522D /* CoctailMasterTests.swift */; };
 		93363E802565A816007F522D /* CoctailMasterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363E7F2565A816007F522D /* CoctailMasterUITests.swift */; };
-		93363EAE2565A97E007F522D /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363EAD2565A97E007F522D /* RootCoordinator.swift */; };
+		93363EAE2565A97E007F522D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363EAD2565A97E007F522D /* AppCoordinator.swift */; };
 		93363EB32565A998007F522D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363EB22565A998007F522D /* Coordinator.swift */; };
 		93363EEB2565AA65007F522D /* AutolayoutWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363EEA2565AA65007F522D /* AutolayoutWrapper.swift */; };
 		93363F0B2565AE9F007F522D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93363F0A2565AE9F007F522D /* NetworkService.swift */; };
@@ -27,7 +33,16 @@
 		9357D5EB25AAF169003C9A3F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D5EA25AAF169003C9A3F /* Constants.swift */; };
 		9357D5F325AAF1EF003C9A3F /* RequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D5F225AAF1EF003C9A3F /* RequestList.swift */; };
 		936DC85325AB5DBE001B5717 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC85225AB5DBE001B5717 /* DataService.swift */; };
-		93857AAF2565B18F00221DDD /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93857AAE2565B18F00221DDD /* RootViewModel.swift */; };
+		937CDB9A25AD77EA0090EDC7 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDB9925AD77EA0090EDC7 /* TabBarCoordinator.swift */; };
+		937CDB9F25AD77F50090EDC7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDB9E25AD77F50090EDC7 /* TabBarController.swift */; };
+		937CDBAB25AD797A0090EDC7 /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */; };
+		937CDBAC25AD797A0090EDC7 /* InfoScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA525AD797A0090EDC7 /* InfoScreenCoordinator.swift */; };
+		937CDBAD25AD797A0090EDC7 /* InfoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA625AD797A0090EDC7 /* InfoScreenViewModel.swift */; };
+		937CDBAE25AD797A0090EDC7 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA825AD797A0090EDC7 /* SearchScreenViewModel.swift */; };
+		937CDBAF25AD797A0090EDC7 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA925AD797A0090EDC7 /* SearchScreenViewController.swift */; };
+		937CDBB025AD797A0090EDC7 /* SearchScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBAA25AD797A0090EDC7 /* SearchScreenCoordinator.swift */; };
+		937CDBC525AD88140090EDC7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBC425AD88140090EDC7 /* R.generated.swift */; };
+		93C1E7EA261F507100B0DA72 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C1E7E9261F507100B0DA72 /* UIColor.swift */; };
 		93D1A7E025A1EB950077BB1D /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1A7DC25A1EB950077BB1D /* AppContainer.swift */; };
 		93D1A7E125A1EB950077BB1D /* AppFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1A7DD25A1EB950077BB1D /* AppFramework.swift */; };
 		93D1A80825A1EF7E0077BB1D /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D1A80725A1EF7E0077BB1D /* CommonUtils.swift */; };
@@ -56,10 +71,16 @@
 		6228CF659E5FF1A3F12B3BD0 /* Pods-CoctailMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailMaster.release.xcconfig"; path = "Target Support Files/Pods-CoctailMaster/Pods-CoctailMaster.release.xcconfig"; sourceTree = "<group>"; };
 		6CD49FA5E1124582E95E2925 /* Pods-CoctailMasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailMasterTests.debug.xcconfig"; path = "Target Support Files/Pods-CoctailMasterTests/Pods-CoctailMasterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E469835762DF08DC6A291BE /* libPods-CoctailMasterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoctailMasterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		931D944425AC13DE00C0DCD1 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		931D944525AC13DE00C0DCD1 /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
+		931D944625AC13DE00C0DCD1 /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		931D944D25AC140200C0DCD1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		931D944E25AC140200C0DCD1 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		931D944F25AC140200C0DCD1 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		931D946425AC15E600C0DCD1 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		93363E5A2565A815007F522D /* CoctailMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoctailMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93363E5D2565A815007F522D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93363E5F2565A815007F522D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		93363E612565A815007F522D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		93363E662565A815007F522D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93363E692565A815007F522D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93363E6B2565A815007F522D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,7 +90,7 @@
 		93363E7B2565A816007F522D /* CoctailMasterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoctailMasterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93363E7F2565A816007F522D /* CoctailMasterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailMasterUITests.swift; sourceTree = "<group>"; };
 		93363E812565A816007F522D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93363EAD2565A97E007F522D /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		93363EAD2565A97E007F522D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		93363EB22565A998007F522D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		93363EEA2565AA65007F522D /* AutolayoutWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutWrapper.swift; sourceTree = "<group>"; };
 		93363EF92565ACFA007F522D /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
@@ -81,7 +102,16 @@
 		9357D5EA25AAF169003C9A3F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9357D5F225AAF1EF003C9A3F /* RequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestList.swift; sourceTree = "<group>"; };
 		936DC85225AB5DBE001B5717 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		93857AAE2565B18F00221DDD /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		937CDB9925AD77EA0090EDC7 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		937CDB9E25AD77F50090EDC7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
+		937CDBA525AD797A0090EDC7 /* InfoScreenCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreenCoordinator.swift; sourceTree = "<group>"; };
+		937CDBA625AD797A0090EDC7 /* InfoScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreenViewModel.swift; sourceTree = "<group>"; };
+		937CDBA825AD797A0090EDC7 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
+		937CDBA925AD797A0090EDC7 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
+		937CDBAA25AD797A0090EDC7 /* SearchScreenCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenCoordinator.swift; sourceTree = "<group>"; };
+		937CDBC425AD88140090EDC7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		93C1E7E9261F507100B0DA72 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		93D1A7DC25A1EB950077BB1D /* AppContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		93D1A7DD25A1EB950077BB1D /* AppFramework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFramework.swift; sourceTree = "<group>"; };
 		93D1A80725A1EF7E0077BB1D /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
@@ -115,6 +145,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		931D944225AC137C00C0DCD1 /* OnboardingModule */ = {
+			isa = PBXGroup;
+			children = (
+				931D944E25AC140200C0DCD1 /* OnboardingCoordinator.swift */,
+				931D944D25AC140200C0DCD1 /* OnboardingViewController.swift */,
+				931D944F25AC140200C0DCD1 /* OnboardingViewModel.swift */,
+			);
+			path = OnboardingModule;
+			sourceTree = "<group>";
+		};
+		931D944325AC138F00C0DCD1 /* MainScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				931D944525AC13DE00C0DCD1 /* MainScreenCoordinator.swift */,
+				931D944625AC13DE00C0DCD1 /* MainScreenViewController.swift */,
+				931D944425AC13DE00C0DCD1 /* MainScreenViewModel.swift */,
+			);
+			path = MainScreenModule;
+			sourceTree = "<group>";
+		};
 		93363E512565A815007F522D = {
 			isa = PBXGroup;
 			children = (
@@ -191,11 +241,44 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		937CDB9725AD76EC0090EDC7 /* TabBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				937CDB9925AD77EA0090EDC7 /* TabBarCoordinator.swift */,
+				937CDB9E25AD77F50090EDC7 /* TabBarController.swift */,
+			);
+			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		937CDBA325AD797A0090EDC7 /* InfoScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				937CDBA525AD797A0090EDC7 /* InfoScreenCoordinator.swift */,
+				937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */,
+				937CDBA625AD797A0090EDC7 /* InfoScreenViewModel.swift */,
+			);
+			name = InfoScreenModule;
+			path = CoctailMaster/Modules/InfoScreenModule;
+			sourceTree = SOURCE_ROOT;
+		};
+		937CDBA725AD797A0090EDC7 /* SearchScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				937CDBAA25AD797A0090EDC7 /* SearchScreenCoordinator.swift */,
+				937CDBA925AD797A0090EDC7 /* SearchScreenViewController.swift */,
+				937CDBA825AD797A0090EDC7 /* SearchScreenViewModel.swift */,
+			);
+			name = SearchScreenModule;
+			path = CoctailMaster/Modules/SearchScreenModule;
+			sourceTree = SOURCE_ROOT;
+		};
 		93BC90D425A19DAB007EB91A /* ExtensionsAndUtils */ = {
 			isa = PBXGroup;
 			children = (
 				93363EEA2565AA65007F522D /* AutolayoutWrapper.swift */,
 				93D1A80725A1EF7E0077BB1D /* CommonUtils.swift */,
+				931D946425AC15E600C0DCD1 /* UserDefaults.swift */,
+				93C1E7E9261F507100B0DA72 /* UIColor.swift */,
 			);
 			path = ExtensionsAndUtils;
 			sourceTree = "<group>";
@@ -204,19 +287,14 @@
 			isa = PBXGroup;
 			children = (
 				93363EB22565A998007F522D /* Coordinator.swift */,
-				93BC90D625A19DC7007EB91A /* RootModule */,
+				93363EAD2565A97E007F522D /* AppCoordinator.swift */,
+				937CDB9725AD76EC0090EDC7 /* TabBarModule */,
+				931D944225AC137C00C0DCD1 /* OnboardingModule */,
+				931D944325AC138F00C0DCD1 /* MainScreenModule */,
+				937CDBA725AD797A0090EDC7 /* SearchScreenModule */,
+				937CDBA325AD797A0090EDC7 /* InfoScreenModule */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		93BC90D625A19DC7007EB91A /* RootModule */ = {
-			isa = PBXGroup;
-			children = (
-				93363EAD2565A97E007F522D /* RootCoordinator.swift */,
-				93363E612565A815007F522D /* RootViewController.swift */,
-				93857AAE2565B18F00221DDD /* RootViewModel.swift */,
-			);
-			path = RootModule;
 			sourceTree = "<group>";
 		};
 		93BC90D725A19DE4007EB91A /* Services */ = {
@@ -234,6 +312,7 @@
 			children = (
 				93363E5D2565A815007F522D /* AppDelegate.swift */,
 				93363E5F2565A815007F522D /* SceneDelegate.swift */,
+				937CDBC425AD88140090EDC7 /* R.generated.swift */,
 				93363E682565A815007F522D /* LaunchScreen.storyboard */,
 				93363E6B2565A815007F522D /* Info.plist */,
 			);
@@ -268,6 +347,7 @@
 			buildConfigurationList = 93363E842565A816007F522D /* Build configuration list for PBXNativeTarget "CoctailMaster" */;
 			buildPhases = (
 				513E67E61790AF5A5DA7BA2F /* [CP] Check Pods Manifest.lock */,
+				937CDBBD25AD877D0090EDC7 /* R Script */,
 				93363E562565A815007F522D /* Sources */,
 				93363E572565A815007F522D /* Frameworks */,
 				93363E582565A815007F522D /* Resources */,
@@ -433,6 +513,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		937CDBBD25AD877D0090EDC7 /* R Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "R Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate --generators image,font \"$SRCROOT/R.generated.swift\"\n";
+		};
 		9388FCA325A1960000DB1816 /* SwiftLint autocorrect */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -449,7 +549,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint autocorrect\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		9388FCA425A1961800DB1816 /* SwifLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -476,23 +576,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93363E622565A815007F522D /* RootViewController.swift in Sources */,
-				93363EAE2565A97E007F522D /* RootCoordinator.swift in Sources */,
+				937CDBAC25AD797A0090EDC7 /* InfoScreenCoordinator.swift in Sources */,
+				93C1E7EA261F507100B0DA72 /* UIColor.swift in Sources */,
+				93363EAE2565A97E007F522D /* AppCoordinator.swift in Sources */,
+				931D944925AC13DE00C0DCD1 /* MainScreenViewController.swift in Sources */,
+				937CDB9A25AD77EA0090EDC7 /* TabBarCoordinator.swift in Sources */,
 				93363EEB2565AA65007F522D /* AutolayoutWrapper.swift in Sources */,
 				93D1A80825A1EF7E0077BB1D /* CommonUtils.swift in Sources */,
 				9357D5C825A70DEE003C9A3F /* Drinks.swift in Sources */,
+				931D946525AC15E600C0DCD1 /* UserDefaults.swift in Sources */,
+				937CDBAD25AD797A0090EDC7 /* InfoScreenViewModel.swift in Sources */,
 				93363F0B2565AE9F007F522D /* NetworkService.swift in Sources */,
 				9357D5D925AAE965003C9A3F /* Ingridient.swift in Sources */,
+				931D944725AC13DE00C0DCD1 /* MainScreenViewModel.swift in Sources */,
+				931D945025AC140200C0DCD1 /* OnboardingViewController.swift in Sources */,
 				9357D5EB25AAF169003C9A3F /* Constants.swift in Sources */,
+				937CDBAB25AD797A0090EDC7 /* InfoScreenViewController.swift in Sources */,
+				931D945125AC140200C0DCD1 /* OnboardingCoordinator.swift in Sources */,
 				93363EB32565A998007F522D /* Coordinator.swift in Sources */,
 				936DC85325AB5DBE001B5717 /* DataService.swift in Sources */,
+				937CDBAE25AD797A0090EDC7 /* SearchScreenViewModel.swift in Sources */,
+				937CDBB025AD797A0090EDC7 /* SearchScreenCoordinator.swift in Sources */,
+				931D944825AC13DE00C0DCD1 /* MainScreenCoordinator.swift in Sources */,
 				93D1A7E125A1EB950077BB1D /* AppFramework.swift in Sources */,
 				9357D5C925A70DEE003C9A3F /* Drink.swift in Sources */,
+				937CDBAF25AD797A0090EDC7 /* SearchScreenViewController.swift in Sources */,
+				937CDB9F25AD77F50090EDC7 /* TabBarController.swift in Sources */,
 				9357D5F325AAF1EF003C9A3F /* RequestList.swift in Sources */,
 				93363E5E2565A815007F522D /* AppDelegate.swift in Sources */,
+				937CDBC525AD88140090EDC7 /* R.generated.swift in Sources */,
+				931D945225AC140200C0DCD1 /* OnboardingViewModel.swift in Sources */,
 				9357D5DE25AAEAE6003C9A3F /* Ingridients.swift in Sources */,
 				93D1A7E025A1EB950077BB1D /* AppContainer.swift in Sources */,
-				93857AAF2565B18F00221DDD /* RootViewModel.swift in Sources */,
 				93363E602565A815007F522D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

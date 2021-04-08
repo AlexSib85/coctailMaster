@@ -7,7 +7,11 @@
 
 import Foundation
 
-class RootViewModel {
+protocol MainScreenViewModelOutput: AnyObject {
+    func needUpdateView()
+}
+
+class MainScreenViewModel {
 
     private var dataService: DataService
 

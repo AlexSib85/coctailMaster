@@ -11,23 +11,13 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinator: RootCoordinator?
+    var coordinator: AppCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-
-            // create the main navigation controller to be used for our app
-            let navigationController = UINavigationController()
-
-            // send that into our coordinator so that it can display view controllers
-            coordinator = RootCoordinator(navigationController: navigationController)
-
-            // tell the coordinator to take over control
+            coordinator = AppCoordinator(window: window)
             coordinator?.start()
-
-            // create a basic UIWindow and activate it
-            window.rootViewController = navigationController
             self.window = window
             window.makeKeyAndVisible()
         }

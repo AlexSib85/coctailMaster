@@ -7,9 +7,9 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class SearchScreenViewController: UIViewController {
 
-    var viewModel: RootViewModel!
+    var viewModel: SearchScreenViewModel!
 
     @UsesAutoLayout private var stackView = UIStackView()
     @UsesAutoLayout private var label: UILabel = UILabel()
@@ -22,14 +22,14 @@ class RootViewController: UIViewController {
 
     private func setupUI() {
 
-        view.backgroundColor = .orange
+        view.backgroundColor = .green
 
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.spacing = 16
         view.addSubview(stackView)
 
-        label.text = "Start screen"
+        label.text = "Search screen"
         label.textAlignment = .center
         stackView.addArrangedSubview(label)
 

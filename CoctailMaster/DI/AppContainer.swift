@@ -12,6 +12,7 @@ class AppContainer {
         let container = DIContainer()
         container.append(framework: AppFramework.self)
         container.initializeSingletonObjects()
+
         if !container.makeGraph().checkIsValid(checkGraphCycles: true) {
             fatalError("invalid graph")
         }
