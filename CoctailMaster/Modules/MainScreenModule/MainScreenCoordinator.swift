@@ -9,24 +9,28 @@ import UIKit
 
 class MainScreenCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
-    weak var parentCoordinator: AppCoordinator?
+    var navigationController: UINavigationController!
+    weak var parentCoordinator: Coordinator?
 
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init() {
+
+    }
+
+    deinit {
+        print("DEINIT MainScreenCoordinator")
     }
 
     func start() {
-        AppContainer.shared.register { MainScreenViewModel(dataService: $0) }
-            .lifetime(.objectGraph)
-
-        AppContainer.shared.register { MainScreenViewController(nibName: nil, bundle: nil) }
-            .injection { $0.viewModel = $1 }
-            .lifetime(.objectGraph)
-
         let viewController: MainScreenViewController = AppContainer.shared.resolve()
-
-        viewController.navigationItem.hidesBackButton = true
         navigationController.pushViewController(viewController, animated: false)
+    }
+
+    func showDrinksWith(ingridient: Ingridient) {
+        let child: DrinkListCoordinator = AppContainer.shared.resolve()
+        child.ingridient = ingridient
+        child.navigationController = navigationController
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
     }
 }

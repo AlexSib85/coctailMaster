@@ -7,28 +7,33 @@
 
 import Foundation
 
-protocol MainScreenViewModelOutput: AnyObject {
+protocol DrinkListViewModelOutput: AnyObject {
     func needUpdateView()
 }
 
-class MainScreenViewModel {
+class DrinkListViewModel {
 
     private var dataService: DataService
-    weak var output: MainScreenViewModelOutput?
-    weak var coordinator: MainScreenCoordinator?
-    private(set) var ingridients: [Ingridient] = []
+    weak var output: DrinkListViewModelOutput?
+    weak var coordinator: DrinkListCoordinator?
+    var ingridient: Ingridient?
+    private(set) var drinks: [Drink] = []
 
-    init(dataService: DataService, coordinator: MainScreenCoordinator?) {
+    init(dataService: DataService, coordinator: DrinkListCoordinator?) {
         self.dataService = dataService
         self.coordinator = coordinator
+    }
+
+    deinit {
+        print("DEINIT DrinkListViewModel")
     }
 
     func viewLoaded() {
         loadData()
     }
 
-    func selected(ingridient: Ingridient) {
-        self.coordinator?.showDrinksWith(ingridient: ingridient)
+    func finish() {
+        coordinator?.finish()
     }
 
     private func loadData() {
@@ -37,7 +42,7 @@ class MainScreenViewModel {
                 print("Error!!!!!!!!!!!!!!!!! \(error)")
                 return
             }
-            self.ingridients = ingridients ?? []
+
             self.output?.needUpdateView()
         }
     }

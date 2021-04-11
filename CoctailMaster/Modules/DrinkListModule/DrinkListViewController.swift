@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MainScreenViewController: UIViewController {
+class DrinkListViewController: UIViewController {
 
-    var viewModel: MainScreenViewModel!
+    var viewModel: DrinkListViewModel!
 
     @UsesAutoLayout private var tableView = UITableView()
 
@@ -20,9 +20,20 @@ class MainScreenViewController: UIViewController {
         viewModel.viewLoaded()
     }
 
-    private func setupUI() {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
 
-        title = "Список ингридиентов"
+        if self.isMovingFromParent {
+            viewModel.finish()
+        }
+    }
+
+    deinit {
+        print("DEINIT DrinkListViewController")
+    }
+
+    private func setupUI() {
+        title = "Список напитков"
         view.backgroundColor = .lightBlue
 
         tableView.delegate = self
@@ -40,32 +51,34 @@ class MainScreenViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
+
+    @objc
+    private func back() {
+        print("Back tapped")
+    }
 }
 
-extension MainScreenViewController: MainScreenViewModelOutput {
+extension DrinkListViewController: DrinkListViewModelOutput {
     func needUpdateView() {
         tableView.reloadData()
     }
 }
 
-extension MainScreenViewController: UITableViewDataSource {
+extension DrinkListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.ingridients.count
+        return viewModel.drinks.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.ingridients[safe: indexPath.row]?.strIngredient1
+        cell.textLabel?.text = viewModel.drinks[safe: indexPath.row]?.strDrink
         return cell
     }
 }
 
-extension MainScreenViewController: UITableViewDelegate {
+extension DrinkListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath)
-        if let ingridient = viewModel.ingridients[safe: indexPath.row] {
-            viewModel.selected(ingridient: ingridient)
-        }
     }
 }

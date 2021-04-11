@@ -9,7 +9,7 @@ import UIKit
 
 class SearchScreenCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController!
     weak var parentCoordinator: AppCoordinator?
 
     init(navigationController: UINavigationController) {
@@ -26,7 +26,6 @@ class SearchScreenCoordinator: Coordinator {
 
         let viewController: SearchScreenViewController = AppContainer.shared.resolve()
 
-        viewController.navigationItem.hidesBackButton = true
         navigationController.pushViewController(viewController, animated: true)
     }
 }

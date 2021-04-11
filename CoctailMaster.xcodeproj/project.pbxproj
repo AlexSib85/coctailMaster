@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		259793BC36D9E87A62809DD1 /* libPods-CoctailMasterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E469835762DF08DC6A291BE /* libPods-CoctailMasterTests.a */; };
 		28678CB1205B2AFBE596E48F /* libPods-CoctailMaster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B06A2371A8F9D1A0C0AEF82 /* libPods-CoctailMaster.a */; };
+		931AB5742622CD340071F400 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AB5732622CD340071F400 /* Collections.swift */; };
+		931AB57C262322690071F400 /* DrinkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AB579262322680071F400 /* DrinkListViewController.swift */; };
+		931AB57D262322690071F400 /* DrinkListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AB57A262322690071F400 /* DrinkListCoordinator.swift */; };
+		931AB57E262322690071F400 /* DrinkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AB57B262322690071F400 /* DrinkListViewModel.swift */; };
+		931AB5952623363B0071F400 /* UIFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931AB5942623363B0071F400 /* UIFramework.swift */; };
 		931D944725AC13DE00C0DCD1 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D944425AC13DE00C0DCD1 /* MainScreenViewModel.swift */; };
 		931D944825AC13DE00C0DCD1 /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D944525AC13DE00C0DCD1 /* MainScreenCoordinator.swift */; };
 		931D944925AC13DE00C0DCD1 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D944625AC13DE00C0DCD1 /* MainScreenViewController.swift */; };
@@ -71,6 +76,11 @@
 		6228CF659E5FF1A3F12B3BD0 /* Pods-CoctailMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailMaster.release.xcconfig"; path = "Target Support Files/Pods-CoctailMaster/Pods-CoctailMaster.release.xcconfig"; sourceTree = "<group>"; };
 		6CD49FA5E1124582E95E2925 /* Pods-CoctailMasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoctailMasterTests.debug.xcconfig"; path = "Target Support Files/Pods-CoctailMasterTests/Pods-CoctailMasterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E469835762DF08DC6A291BE /* libPods-CoctailMasterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoctailMasterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		931AB5732622CD340071F400 /* Collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
+		931AB579262322680071F400 /* DrinkListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkListViewController.swift; sourceTree = "<group>"; };
+		931AB57A262322690071F400 /* DrinkListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkListCoordinator.swift; sourceTree = "<group>"; };
+		931AB57B262322690071F400 /* DrinkListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkListViewModel.swift; sourceTree = "<group>"; };
+		931AB5942623363B0071F400 /* UIFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFramework.swift; sourceTree = "<group>"; };
 		931D944425AC13DE00C0DCD1 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		931D944525AC13DE00C0DCD1 /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
 		931D944625AC13DE00C0DCD1 /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
@@ -145,12 +155,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		931AB5782623220C0071F400 /* DrinkListModule */ = {
+			isa = PBXGroup;
+			children = (
+				931AB57A262322690071F400 /* DrinkListCoordinator.swift */,
+				931AB57B262322690071F400 /* DrinkListViewModel.swift */,
+				931AB579262322680071F400 /* DrinkListViewController.swift */,
+			);
+			path = DrinkListModule;
+			sourceTree = "<group>";
+		};
 		931D944225AC137C00C0DCD1 /* OnboardingModule */ = {
 			isa = PBXGroup;
 			children = (
 				931D944E25AC140200C0DCD1 /* OnboardingCoordinator.swift */,
-				931D944D25AC140200C0DCD1 /* OnboardingViewController.swift */,
 				931D944F25AC140200C0DCD1 /* OnboardingViewModel.swift */,
+				931D944D25AC140200C0DCD1 /* OnboardingViewController.swift */,
 			);
 			path = OnboardingModule;
 			sourceTree = "<group>";
@@ -159,8 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				931D944525AC13DE00C0DCD1 /* MainScreenCoordinator.swift */,
-				931D944625AC13DE00C0DCD1 /* MainScreenViewController.swift */,
 				931D944425AC13DE00C0DCD1 /* MainScreenViewModel.swift */,
+				931D944625AC13DE00C0DCD1 /* MainScreenViewController.swift */,
 			);
 			path = MainScreenModule;
 			sourceTree = "<group>";
@@ -254,8 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				937CDBA525AD797A0090EDC7 /* InfoScreenCoordinator.swift */,
-				937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */,
 				937CDBA625AD797A0090EDC7 /* InfoScreenViewModel.swift */,
+				937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */,
 			);
 			name = InfoScreenModule;
 			path = CoctailMaster/Modules/InfoScreenModule;
@@ -265,8 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				937CDBAA25AD797A0090EDC7 /* SearchScreenCoordinator.swift */,
-				937CDBA925AD797A0090EDC7 /* SearchScreenViewController.swift */,
 				937CDBA825AD797A0090EDC7 /* SearchScreenViewModel.swift */,
+				937CDBA925AD797A0090EDC7 /* SearchScreenViewController.swift */,
 			);
 			name = SearchScreenModule;
 			path = CoctailMaster/Modules/SearchScreenModule;
@@ -279,6 +299,7 @@
 				93D1A80725A1EF7E0077BB1D /* CommonUtils.swift */,
 				931D946425AC15E600C0DCD1 /* UserDefaults.swift */,
 				93C1E7E9261F507100B0DA72 /* UIColor.swift */,
+				931AB5732622CD340071F400 /* Collections.swift */,
 			);
 			path = ExtensionsAndUtils;
 			sourceTree = "<group>";
@@ -291,6 +312,7 @@
 				937CDB9725AD76EC0090EDC7 /* TabBarModule */,
 				931D944225AC137C00C0DCD1 /* OnboardingModule */,
 				931D944325AC138F00C0DCD1 /* MainScreenModule */,
+				931AB5782623220C0071F400 /* DrinkListModule */,
 				937CDBA725AD797A0090EDC7 /* SearchScreenModule */,
 				937CDBA325AD797A0090EDC7 /* InfoScreenModule */,
 			);
@@ -324,6 +346,7 @@
 			children = (
 				93D1A7DC25A1EB950077BB1D /* AppContainer.swift */,
 				93D1A7DD25A1EB950077BB1D /* AppFramework.swift */,
+				931AB5942623363B0071F400 /* UIFramework.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -577,15 +600,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				937CDBAC25AD797A0090EDC7 /* InfoScreenCoordinator.swift in Sources */,
+				931AB57C262322690071F400 /* DrinkListViewController.swift in Sources */,
 				93C1E7EA261F507100B0DA72 /* UIColor.swift in Sources */,
 				93363EAE2565A97E007F522D /* AppCoordinator.swift in Sources */,
 				931D944925AC13DE00C0DCD1 /* MainScreenViewController.swift in Sources */,
 				937CDB9A25AD77EA0090EDC7 /* TabBarCoordinator.swift in Sources */,
 				93363EEB2565AA65007F522D /* AutolayoutWrapper.swift in Sources */,
 				93D1A80825A1EF7E0077BB1D /* CommonUtils.swift in Sources */,
+				931AB5742622CD340071F400 /* Collections.swift in Sources */,
 				9357D5C825A70DEE003C9A3F /* Drinks.swift in Sources */,
+				931AB57E262322690071F400 /* DrinkListViewModel.swift in Sources */,
 				931D946525AC15E600C0DCD1 /* UserDefaults.swift in Sources */,
+				931AB57D262322690071F400 /* DrinkListCoordinator.swift in Sources */,
 				937CDBAD25AD797A0090EDC7 /* InfoScreenViewModel.swift in Sources */,
+				931AB5952623363B0071F400 /* UIFramework.swift in Sources */,
 				93363F0B2565AE9F007F522D /* NetworkService.swift in Sources */,
 				9357D5D925AAE965003C9A3F /* Ingridient.swift in Sources */,
 				931D944725AC13DE00C0DCD1 /* MainScreenViewModel.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 
 class InfoScreenCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController!
     weak var parentCoordinator: AppCoordinator?
 
     init(navigationController: UINavigationController) {
@@ -27,7 +27,6 @@ class InfoScreenCoordinator: Coordinator {
 
         let viewController: InfoScreenViewController = AppContainer.shared.resolve()
 
-        viewController.navigationItem.hidesBackButton = true
         navigationController.pushViewController(viewController, animated: true)
     }
 }

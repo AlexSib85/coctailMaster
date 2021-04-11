@@ -10,7 +10,7 @@ import UIKit
 class TabBarCoordinator: Coordinator {
 
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController!
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -22,7 +22,8 @@ class TabBarCoordinator: Coordinator {
 
         let topRatedNavigationController = UINavigationController()
         topRatedNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
-        let topRatedCoordinator = MainScreenCoordinator(navigationController: topRatedNavigationController)
+        let topRatedCoordinator: MainScreenCoordinator = AppContainer.shared.resolve()
+        topRatedCoordinator.navigationController = topRatedNavigationController
 
         let searchNavigationController = UINavigationController()
         searchNavigationController.tabBarItem = UITabBarItem(

@@ -11,6 +11,7 @@ class AppContainer {
     static let shared: DIContainer = {
         let container = DIContainer()
         container.append(framework: AppFramework.self)
+        container.append(framework: UIFramework.self)
         container.initializeSingletonObjects()
 
         if !container.makeGraph().checkIsValid(checkGraphCycles: true) {

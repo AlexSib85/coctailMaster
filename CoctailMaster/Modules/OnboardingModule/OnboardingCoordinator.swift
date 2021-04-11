@@ -10,8 +10,8 @@ import SwiftyUserDefaults
 
 class OnboardingCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
-    weak var parentCoordinator: AppCoordinator?
+    var navigationController: UINavigationController!
+    weak var parentCoordinator: Coordinator?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

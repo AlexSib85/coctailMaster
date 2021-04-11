@@ -11,7 +11,7 @@ import SwiftyUserDefaults
 class AppCoordinator: Coordinator {
     private let window: UIWindow
     var childCoordinators: [Coordinator] = []
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController!
 
     init(window: UIWindow) {
         self.window = window

@@ -12,6 +12,7 @@ protocol DataService {
     func getRandomDrink(closure: @escaping (Drink?, Error?) -> Void)
 }
 
+//This service intented to be used for caching data
 class DataServiceImpl: DataService {
     private var networkService: NetworkService
 
