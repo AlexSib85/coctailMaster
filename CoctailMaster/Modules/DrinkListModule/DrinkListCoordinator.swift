@@ -13,8 +13,9 @@ class DrinkListCoordinator: Coordinator {
     weak var parentCoordinator: Coordinator?
     var ingridient: Ingridient!
 
-    init() {
-
+    init(navigationController: UINavigationController, ingridient: Ingridient) {
+        self.navigationController = navigationController
+        self.ingridient = ingridient
     }
 
     deinit {

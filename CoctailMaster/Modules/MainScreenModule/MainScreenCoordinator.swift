@@ -12,8 +12,8 @@ class MainScreenCoordinator: Coordinator {
     var navigationController: UINavigationController!
     weak var parentCoordinator: Coordinator?
 
-    init() {
-
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
     deinit {
@@ -26,9 +26,8 @@ class MainScreenCoordinator: Coordinator {
     }
 
     func showDrinksWith(ingridient: Ingridient) {
+        AppContainer.shared.extensions(for: DrinkListCoordinator.self)?.setArgs(navigationController, ingridient)
         let child: DrinkListCoordinator = AppContainer.shared.resolve()
-        child.ingridient = ingridient
-        child.navigationController = navigationController
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()

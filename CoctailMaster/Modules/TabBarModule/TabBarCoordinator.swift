@@ -22,8 +22,8 @@ class TabBarCoordinator: Coordinator {
 
         let topRatedNavigationController = UINavigationController()
         topRatedNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        AppContainer.shared.extensions(for: MainScreenCoordinator.self)?.setArgs(topRatedNavigationController)
         let topRatedCoordinator: MainScreenCoordinator = AppContainer.shared.resolve()
-        topRatedCoordinator.navigationController = topRatedNavigationController
 
         let searchNavigationController = UINavigationController()
         searchNavigationController.tabBarItem = UITabBarItem(

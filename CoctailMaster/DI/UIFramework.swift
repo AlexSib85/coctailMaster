@@ -10,7 +10,7 @@ import DITranquillity
 public class UIFramework: DIFramework {
     public static func load(container: DIContainer) {
 
-        container.register(MainScreenCoordinator.init)
+        container.register { MainScreenCoordinator(navigationController: arg($0)) }
             .lifetime(.perRun(.strong))
 
         container.register { MainScreenViewModel(dataService: $0, coordinator: $1) }
@@ -20,7 +20,7 @@ public class UIFramework: DIFramework {
             .injection { $0.viewModel = $1 }
             .lifetime(.objectGraph)
 
-        container.register(DrinkListCoordinator.init)
+        container.register { DrinkListCoordinator(navigationController: arg($0), ingridient: arg($1) ) }
             .lifetime(.perRun(.weak))
 
         container.register { DrinkListViewModel(dataService: $0, coordinator: $1) }
