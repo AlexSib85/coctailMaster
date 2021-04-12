@@ -10,6 +10,7 @@ import Foundation
 protocol DataService {
     func getIngridientList(closure: @escaping ([Ingridient]?, Error?) -> Void)
     func getRandomDrink(closure: @escaping (Drink?, Error?) -> Void)
+    func getDrinksListBy(ingridient: Ingridient, closure: @escaping ([Drink]?, Error?) -> Void)
 }
 
 //This service intented to be used for caching data
@@ -25,6 +26,20 @@ class DataServiceImpl: DataService {
         networkService.loadIngridientList { rootIngridients, error in
             if let rootIngridients = rootIngridients {
                 closure(rootIngridients.ingridients, nil)
+            } else {
+                closure(nil, error)
+            }
+        }
+    }
+
+    func getDrinksListBy(ingridient: Ingridient, closure: @escaping ([Drink]?, Error?) -> Void) {
+        guard let ingridientString = ingridient.strIngredient1 else {
+            closure([], nil)
+            return
+        }
+        networkService.loadDrinkListBy(ingridient: ingridientString) { rootDrinks, error in
+            if let rootDrinks = rootDrinks {
+                closure(rootDrinks.drinks, nil)
             } else {
                 closure(nil, error)
             }

@@ -16,6 +16,7 @@ enum NetworkError: Error {
 protocol NetworkService {
     func loadIngridientList(closure: @escaping (Ingridients?, Error?) -> Void)
     func loadRandomDrink(closure: @escaping (Drinks?, Error?) -> Void)
+    func loadDrinkListBy(ingridient: String, closure: @escaping (Drinks?, Error?) -> Void)
 }
 
 class NetworkServiceImpl: NetworkService {
@@ -26,6 +27,10 @@ class NetworkServiceImpl: NetworkService {
 
     func loadRandomDrink(closure: @escaping (Drinks?, Error?) -> Void) {
         loadRequest(request: RequestList.randomCoctail, closure: closure)
+    }
+
+    func loadDrinkListBy(ingridient: String, closure: @escaping (Drinks?, Error?) -> Void) {
+        loadRequest(request: RequestList.drinksListByIngridient(ingridient), closure: closure)
     }
 
     private func loadRequest<T: Decodable>(request: RequestList, closure: @escaping (T?, Error?) -> Void) {

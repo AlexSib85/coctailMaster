@@ -11,7 +11,7 @@ class DrinkListCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController!
     weak var parentCoordinator: Coordinator?
-    var ingridient: Ingridient!
+    var ingridient: Ingridient
 
     init(navigationController: UINavigationController, ingridient: Ingridient) {
         self.navigationController = navigationController
@@ -23,8 +23,8 @@ class DrinkListCoordinator: Coordinator {
     }
 
     func start() {
+        AppContainer.shared.extensions(for: DrinkListViewModel.self)?.setArgs(ingridient)
         let viewController: DrinkListViewController = AppContainer.shared.resolve()
-        viewController.viewModel.ingridient = ingridient
         navigationController.pushViewController(viewController, animated: true)
     }
 

@@ -23,7 +23,7 @@ public class UIFramework: DIFramework {
         container.register { DrinkListCoordinator(navigationController: arg($0), ingridient: arg($1) ) }
             .lifetime(.perRun(.weak))
 
-        container.register { DrinkListViewModel(dataService: $0, coordinator: $1) }
+        container.register { DrinkListViewModel(dataService: $0, coordinator: $1, ingridient: arg($2)) }
             .lifetime(.objectGraph)
 
         container.register { DrinkListViewController(nibName: nil, bundle: nil) }

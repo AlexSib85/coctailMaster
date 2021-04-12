@@ -11,6 +11,7 @@ enum RequestList: URLRequestConvertible {
 
     case randomCoctail
     case ingridientsList
+    case drinksListByIngridient(String)
 
     #if RELEASE
     static let baseURL = Constant.ServerURL.prod
@@ -36,6 +37,8 @@ enum RequestList: URLRequestConvertible {
             return "/1/random.php"
         case .ingridientsList:
             return "/1/list.php?i=list"
+        case .drinksListByIngridient(let ingridient):
+            return "/1/filter.php?i=\(ingridient)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         }
     }
 
@@ -46,7 +49,8 @@ enum RequestList: URLRequestConvertible {
 
         switch self {
         case .randomCoctail,
-             .ingridientsList:
+             .ingridientsList,
+             .drinksListByIngridient:
             request = try urlEncoder.encode(request, with: [:])
         }
         return request
