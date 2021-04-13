@@ -9,9 +9,9 @@ import Foundation
 
 struct Drinks: Codable {
 
-    var drinks: [Drink] = []
+    var drinks: [Drink]?
 
-    init(drinks: [Drink] = []) {
+    init(drinks: [Drink]?) {
         self.drinks = drinks
     }
 }

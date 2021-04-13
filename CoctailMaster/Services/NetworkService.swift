@@ -17,6 +17,7 @@ protocol NetworkService {
     func loadIngridientList(closure: @escaping (Ingridients?, Error?) -> Void)
     func loadRandomDrink(closure: @escaping (Drinks?, Error?) -> Void)
     func loadDrinkListBy(ingridient: String, closure: @escaping (Drinks?, Error?) -> Void)
+    func searchDrinkBy(string: String, closure: @escaping (Drinks?, Error?) -> Void)
 }
 
 class NetworkServiceImpl: NetworkService {
@@ -31,6 +32,10 @@ class NetworkServiceImpl: NetworkService {
 
     func loadDrinkListBy(ingridient: String, closure: @escaping (Drinks?, Error?) -> Void) {
         loadRequest(request: RequestList.drinksListByIngridient(ingridient), closure: closure)
+    }
+
+    func searchDrinkBy(string: String, closure: @escaping (Drinks?, Error?) -> Void) {
+        loadRequest(request: RequestList.searchDrinkByString(string), closure: closure)
     }
 
     private func loadRequest<T: Decodable>(request: RequestList, closure: @escaping (T?, Error?) -> Void) {

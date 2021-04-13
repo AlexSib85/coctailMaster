@@ -322,8 +322,8 @@
 		93BC90D725A19DE4007EB91A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				93363F0A2565AE9F007F522D /* NetworkService.swift */,
 				936DC85225AB5DBE001B5717 /* DataService.swift */,
+				93363F0A2565AE9F007F522D /* NetworkService.swift */,
 				9357D5F225AAF1EF003C9A3F /* RequestList.swift */,
 			);
 			path = Services;
