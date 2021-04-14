@@ -60,13 +60,14 @@ extension SearchScreenViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.drinks[safe: indexPath.row]?.strDrink
+        cell.textLabel?.text = viewModel.drinks[safe: indexPath.row]?.title
         return cell
     }
 }
 
 extension SearchScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         print("indexPath \(indexPath)")
     }
 }

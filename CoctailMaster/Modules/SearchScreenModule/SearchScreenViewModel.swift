@@ -17,7 +17,7 @@ class SearchScreenViewModel {
     weak var output: SearchScreenViewModelOutput?
     private var searchTimer: Timer?
     private var searchString: String = ""
-    private(set) var drinks: [Drink] = []
+    private(set) var drinks: [DrinkModel] = []
 
     init(dataService: DataService) {
         self.dataService = dataService

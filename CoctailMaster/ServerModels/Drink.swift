@@ -9,8 +9,8 @@ import Foundation
 
 struct Drink: Codable {
 
-    var idDrink: String?
-    var strDrink: String?
+    var idDrink: String
+    var strDrink: String
     var strDrinkAlternate: String?
     var strDrinkES: String?
     var strDrinkDE: String?
@@ -65,7 +65,7 @@ struct Drink: Codable {
     var strCreativeCommonsConfirmed: String?
     var dateModified: String?
 
-    init(idDrink: String? = nil, strDrink: String? = nil, strDrinkAlternate: String? = nil, strDrinkES: String? = nil, strDrinkDE: String? = nil, strDrinkFR: String? = nil, strDrinkZHHANS: String? = nil, strDrinkZHHANT: String? = nil, strTags: String? = nil, strVideo: String? = nil, strCategory: String? = nil, strIBA: String? = nil, strAlcoholic: String? = nil, strGlass: String? = nil, strInstructions: String? = nil, strInstructionsES: String? = nil, strInstructionsDE: String? = nil, strInstructionsFR: String? = nil, strInstructionsZHHANS: String? = nil, strInstructionsZHHANT: String? = nil, strDrinkThumb: String? = nil, strIngredient1: String? = nil, strIngredient2: String? = nil, strIngredient3: String? = nil, strIngredient4: String? = nil, strIngredient5: String? = nil, strIngredient6: String? = nil, strIngredient7: String? = nil, strIngredient8: String? = nil, strIngredient9: String? = nil, strIngredient10: String? = nil, strIngredient11: String? = nil, strIngredient12: String? = nil, strIngredient13: String? = nil, strIngredient14: String? = nil, strIngredient15: String? = nil, strMeasure1: String? = nil, strMeasure2: String? = nil, strMeasure3: String? = nil, strMeasure4: String? = nil, strMeasure5: String? = nil, strMeasure6: String? = nil, strMeasure7: String? = nil, strMeasure8: String? = nil, strMeasure9: String? = nil, strMeasure10: String? = nil, strMeasure11: String? = nil, strMeasure12: String? = nil, strMeasure13: String? = nil, strMeasure14: String? = nil, strMeasure15: String? = nil, strImageSource: String? = nil, strImageAttribution: String? = nil, strCreativeCommonsConfirmed: String? = nil, dateModified: String? = nil) {
+    init(idDrink: String, strDrink: String, strDrinkAlternate: String? = nil, strDrinkES: String? = nil, strDrinkDE: String? = nil, strDrinkFR: String? = nil, strDrinkZHHANS: String? = nil, strDrinkZHHANT: String? = nil, strTags: String? = nil, strVideo: String? = nil, strCategory: String? = nil, strIBA: String? = nil, strAlcoholic: String? = nil, strGlass: String? = nil, strInstructions: String? = nil, strInstructionsES: String? = nil, strInstructionsDE: String? = nil, strInstructionsFR: String? = nil, strInstructionsZHHANS: String? = nil, strInstructionsZHHANT: String? = nil, strDrinkThumb: String? = nil, strIngredient1: String? = nil, strIngredient2: String? = nil, strIngredient3: String? = nil, strIngredient4: String? = nil, strIngredient5: String? = nil, strIngredient6: String? = nil, strIngredient7: String? = nil, strIngredient8: String? = nil, strIngredient9: String? = nil, strIngredient10: String? = nil, strIngredient11: String? = nil, strIngredient12: String? = nil, strIngredient13: String? = nil, strIngredient14: String? = nil, strIngredient15: String? = nil, strMeasure1: String? = nil, strMeasure2: String? = nil, strMeasure3: String? = nil, strMeasure4: String? = nil, strMeasure5: String? = nil, strMeasure6: String? = nil, strMeasure7: String? = nil, strMeasure8: String? = nil, strMeasure9: String? = nil, strMeasure10: String? = nil, strMeasure11: String? = nil, strMeasure12: String? = nil, strMeasure13: String? = nil, strMeasure14: String? = nil, strMeasure15: String? = nil, strImageSource: String? = nil, strImageAttribution: String? = nil, strCreativeCommonsConfirmed: String? = nil, dateModified: String) {
         self.idDrink = idDrink
         self.strDrink = strDrink
         self.strDrinkAlternate = strDrinkAlternate

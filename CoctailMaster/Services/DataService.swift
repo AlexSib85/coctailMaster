@@ -11,7 +11,7 @@ protocol DataService {
     func getIngridientList(closure: @escaping ([Ingridient]?, Error?) -> Void)
     func getRandomDrink(closure: @escaping (Drink?, Error?) -> Void)
     func getDrinksListBy(ingridient: Ingridient, closure: @escaping ([Drink]?, Error?) -> Void)
-    func searchDrinksBy(string: String, closure: @escaping ([Drink]?, Error?) -> Void)
+    func searchDrinksBy(string: String, closure: @escaping ([DrinkModel]?, Error?) -> Void)
 }
 
 //This service intented to be used for caching data
@@ -47,10 +47,11 @@ class DataServiceImpl: DataService {
         }
     }
 
-    func searchDrinksBy(string: String, closure: @escaping ([Drink]?, Error?) -> Void) {
+    func searchDrinksBy(string: String, closure: @escaping ([DrinkModel]?, Error?) -> Void) {
         networkService.searchDrinkBy(string: string) { rootDrinks, error in
-            if let rootDrinks = rootDrinks {
-                closure(rootDrinks.drinks, nil)
+            if let rootDrinks = rootDrinks?.drinks {
+                let drinks = rootDrinks.map { DrinkModel(drink: $0) }
+                closure(drinks, nil)
             } else {
                 closure(nil, error)
             }

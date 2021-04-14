@@ -38,6 +38,7 @@
 		9357D5EB25AAF169003C9A3F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D5EA25AAF169003C9A3F /* Constants.swift */; };
 		9357D5F325AAF1EF003C9A3F /* RequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D5F225AAF1EF003C9A3F /* RequestList.swift */; };
 		936DC85325AB5DBE001B5717 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC85225AB5DBE001B5717 /* DataService.swift */; };
+		937665792626AD0B00079A22 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937665782626AD0B00079A22 /* DrinkModel.swift */; };
 		937CDB9A25AD77EA0090EDC7 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDB9925AD77EA0090EDC7 /* TabBarCoordinator.swift */; };
 		937CDB9F25AD77F50090EDC7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDB9E25AD77F50090EDC7 /* TabBarController.swift */; };
 		937CDBAB25AD797A0090EDC7 /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */; };
@@ -112,6 +113,7 @@
 		9357D5EA25AAF169003C9A3F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9357D5F225AAF1EF003C9A3F /* RequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestList.swift; sourceTree = "<group>"; };
 		936DC85225AB5DBE001B5717 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		937665782626AD0B00079A22 /* DrinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
 		937CDB9925AD77EA0090EDC7 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		937CDB9E25AD77F50090EDC7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
@@ -210,7 +212,8 @@
 		93363E5C2565A815007F522D /* CoctailMaster */ = {
 			isa = PBXGroup;
 			children = (
-				9357D5C025A70DDD003C9A3F /* Models */,
+				937665802626B4E400079A22 /* DomainModels */,
+				9357D5C025A70DDD003C9A3F /* ServerModels */,
 				93D1A7DA25A1EB870077BB1D /* DI */,
 				93363E662565A815007F522D /* Assets.xcassets */,
 				93BC90D425A19DAB007EB91A /* ExtensionsAndUtils */,
@@ -250,7 +253,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9357D5C025A70DDD003C9A3F /* Models */ = {
+		9357D5C025A70DDD003C9A3F /* ServerModels */ = {
 			isa = PBXGroup;
 			children = (
 				9357D5C525A70DEE003C9A3F /* Drink.swift */,
@@ -258,7 +261,15 @@
 				9357D5D825AAE965003C9A3F /* Ingridient.swift */,
 				9357D5DD25AAEAE6003C9A3F /* Ingridients.swift */,
 			);
-			path = Models;
+			path = ServerModels;
+			sourceTree = "<group>";
+		};
+		937665802626B4E400079A22 /* DomainModels */ = {
+			isa = PBXGroup;
+			children = (
+				937665782626AD0B00079A22 /* DrinkModel.swift */,
+			);
+			path = DomainModels;
 			sourceTree = "<group>";
 		};
 		937CDB9725AD76EC0090EDC7 /* TabBarModule */ = {
@@ -607,6 +618,7 @@
 				937CDB9A25AD77EA0090EDC7 /* TabBarCoordinator.swift in Sources */,
 				93363EEB2565AA65007F522D /* AutolayoutWrapper.swift in Sources */,
 				93D1A80825A1EF7E0077BB1D /* CommonUtils.swift in Sources */,
+				937665792626AD0B00079A22 /* DrinkModel.swift in Sources */,
 				931AB5742622CD340071F400 /* Collections.swift in Sources */,
 				9357D5C825A70DEE003C9A3F /* Drinks.swift in Sources */,
 				931AB57E262322690071F400 /* DrinkListViewModel.swift in Sources */,
