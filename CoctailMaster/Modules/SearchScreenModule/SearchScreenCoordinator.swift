@@ -16,16 +16,12 @@ class SearchScreenCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
+    deinit {
+        print("DEINIT SearchScreenCoordinator")
+    }
+
     func start() {
-        AppContainer.shared.register { SearchScreenViewModel(dataService: $0) }
-            .lifetime(.objectGraph)
-
-        AppContainer.shared.register { SearchScreenViewController(nibName: nil, bundle: nil) }
-            .injection { $0.viewModel = $1 }
-            .lifetime(.objectGraph)
-
         let viewController: SearchScreenViewController = AppContainer.shared.resolve()
-
         navigationController.pushViewController(viewController, animated: true)
     }
 }

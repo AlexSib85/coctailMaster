@@ -26,13 +26,12 @@ class TabBarCoordinator: Coordinator {
         let topRatedCoordinator: MainScreenCoordinator = AppContainer.shared.resolve()
 
         let searchNavigationController = UINavigationController()
-        searchNavigationController.tabBarItem = UITabBarItem(
-            tabBarSystemItem: .search, tag: 1)
-        let searchCoordinator = SearchScreenCoordinator(navigationController: searchNavigationController)
+        searchNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+        AppContainer.shared.extensions(for: SearchScreenCoordinator.self)?.setArgs(searchNavigationController)
+        let searchCoordinator: SearchScreenCoordinator = AppContainer.shared.resolve()
 
         let historyNavigationController = UINavigationController()
-        historyNavigationController.tabBarItem = UITabBarItem(
-            tabBarSystemItem: .history, tag: 2)
+        historyNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
         let historyCoordinator = InfoScreenCoordinator(navigationController: historyNavigationController)
 
         tabBarController.viewControllers = [topRatedNavigationController,

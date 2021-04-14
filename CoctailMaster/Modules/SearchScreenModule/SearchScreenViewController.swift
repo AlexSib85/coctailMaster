@@ -18,12 +18,11 @@ class SearchScreenViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         viewModel.viewLoaded()
-        viewModel.output = self
     }
 
     private func setupUI() {
 
-        title = "Поиск коктейлей"
+        title = "Поиск напитков"
         view.backgroundColor = .white
 
         tableView.dataSource = self
@@ -67,14 +66,14 @@ extension SearchScreenViewController: UITableViewDataSource {
 }
 
 extension SearchScreenViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("indexPath \(indexPath)")
+    }
 }
 
 extension SearchScreenViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-
         let searchString = searchController.searchBar.text?.lowercased() ?? ""
-        print("searchString \(searchString)")
         viewModel.searchDrinkBy(string: searchString)
     }
 }

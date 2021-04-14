@@ -24,9 +24,25 @@ public class UIFramework: DIFramework {
             .lifetime(.perRun(.weak))
 
         container.register { DrinkListViewModel(dataService: $0, coordinator: $1, ingridient: arg($2)) }
+            .injection(cycle: true) { $0.output = $1 }
             .lifetime(.objectGraph)
 
         container.register { DrinkListViewController(nibName: nil, bundle: nil) }
+            .as(DrinkListViewController.self)
+            .as(DrinkListViewModelOutput.self)
+            .injection { $0.viewModel = $1 }
+            .lifetime(.objectGraph)
+
+        container.register { SearchScreenCoordinator(navigationController: arg($0)) }
+            .lifetime(.perRun(.strong))
+
+        container.register { SearchScreenViewModel(dataService: $0) }
+            .injection(cycle: true) { $0.output = $1 }
+            .lifetime(.objectGraph)
+
+        container.register { SearchScreenViewController(nibName: nil, bundle: nil) }
+            .as(SearchScreenViewController.self)
+            .as(SearchScreenViewModelOutput.self)
             .injection { $0.viewModel = $1 }
             .lifetime(.objectGraph)
     }

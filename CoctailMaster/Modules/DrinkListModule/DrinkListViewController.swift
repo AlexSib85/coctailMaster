@@ -16,7 +16,6 @@ class DrinkListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        viewModel.output = self
         viewModel.viewLoaded()
     }
 
