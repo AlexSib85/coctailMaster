@@ -42,9 +42,9 @@
 		937665792626AD0B00079A22 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937665782626AD0B00079A22 /* DrinkModel.swift */; };
 		937CDB9A25AD77EA0090EDC7 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDB9925AD77EA0090EDC7 /* TabBarCoordinator.swift */; };
 		937CDB9F25AD77F50090EDC7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDB9E25AD77F50090EDC7 /* TabBarController.swift */; };
-		937CDBAB25AD797A0090EDC7 /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */; };
-		937CDBAC25AD797A0090EDC7 /* InfoScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA525AD797A0090EDC7 /* InfoScreenCoordinator.swift */; };
-		937CDBAD25AD797A0090EDC7 /* InfoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA625AD797A0090EDC7 /* InfoScreenViewModel.swift */; };
+		937CDBAB25AD797A0090EDC7 /* FavoritsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA425AD797A0090EDC7 /* FavoritsScreenViewController.swift */; };
+		937CDBAC25AD797A0090EDC7 /* FavoritsScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA525AD797A0090EDC7 /* FavoritsScreenCoordinator.swift */; };
+		937CDBAD25AD797A0090EDC7 /* FavoritsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA625AD797A0090EDC7 /* FavoritsScreenViewModel.swift */; };
 		937CDBAE25AD797A0090EDC7 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA825AD797A0090EDC7 /* SearchScreenViewModel.swift */; };
 		937CDBAF25AD797A0090EDC7 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBA925AD797A0090EDC7 /* SearchScreenViewController.swift */; };
 		937CDBB025AD797A0090EDC7 /* SearchScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDBAA25AD797A0090EDC7 /* SearchScreenCoordinator.swift */; };
@@ -118,9 +118,9 @@
 		937665782626AD0B00079A22 /* DrinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
 		937CDB9925AD77EA0090EDC7 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		937CDB9E25AD77F50090EDC7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
-		937CDBA525AD797A0090EDC7 /* InfoScreenCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreenCoordinator.swift; sourceTree = "<group>"; };
-		937CDBA625AD797A0090EDC7 /* InfoScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreenViewModel.swift; sourceTree = "<group>"; };
+		937CDBA425AD797A0090EDC7 /* FavoritsScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritsScreenViewController.swift; sourceTree = "<group>"; };
+		937CDBA525AD797A0090EDC7 /* FavoritsScreenCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritsScreenCoordinator.swift; sourceTree = "<group>"; };
+		937CDBA625AD797A0090EDC7 /* FavoritsScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritsScreenViewModel.swift; sourceTree = "<group>"; };
 		937CDBA825AD797A0090EDC7 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
 		937CDBA925AD797A0090EDC7 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
 		937CDBAA25AD797A0090EDC7 /* SearchScreenCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchScreenCoordinator.swift; sourceTree = "<group>"; };
@@ -286,9 +286,9 @@
 		937CDBA325AD797A0090EDC7 /* InfoScreenModule */ = {
 			isa = PBXGroup;
 			children = (
-				937CDBA525AD797A0090EDC7 /* InfoScreenCoordinator.swift */,
-				937CDBA625AD797A0090EDC7 /* InfoScreenViewModel.swift */,
-				937CDBA425AD797A0090EDC7 /* InfoScreenViewController.swift */,
+				937CDBA525AD797A0090EDC7 /* FavoritsScreenCoordinator.swift */,
+				937CDBA625AD797A0090EDC7 /* FavoritsScreenViewModel.swift */,
+				937CDBA425AD797A0090EDC7 /* FavoritsScreenViewController.swift */,
 			);
 			name = InfoScreenModule;
 			path = CoctailMaster/Modules/InfoScreenModule;
@@ -613,7 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				937CDBAC25AD797A0090EDC7 /* InfoScreenCoordinator.swift in Sources */,
+				937CDBAC25AD797A0090EDC7 /* FavoritsScreenCoordinator.swift in Sources */,
 				931AB57C262322690071F400 /* DrinkListViewController.swift in Sources */,
 				93C1E7EA261F507100B0DA72 /* UIColor.swift in Sources */,
 				93363EAE2565A97E007F522D /* AppCoordinator.swift in Sources */,
@@ -628,14 +628,14 @@
 				931D946525AC15E600C0DCD1 /* UserDefaults.swift in Sources */,
 				93735EFB2627FF87006360CB /* FileService.swift in Sources */,
 				931AB57D262322690071F400 /* DrinkListCoordinator.swift in Sources */,
-				937CDBAD25AD797A0090EDC7 /* InfoScreenViewModel.swift in Sources */,
+				937CDBAD25AD797A0090EDC7 /* FavoritsScreenViewModel.swift in Sources */,
 				931AB5952623363B0071F400 /* UIFramework.swift in Sources */,
 				93363F0B2565AE9F007F522D /* NetworkService.swift in Sources */,
 				9357D5D925AAE965003C9A3F /* Ingridient.swift in Sources */,
 				931D944725AC13DE00C0DCD1 /* MainScreenViewModel.swift in Sources */,
 				931D945025AC140200C0DCD1 /* OnboardingViewController.swift in Sources */,
 				9357D5EB25AAF169003C9A3F /* Constants.swift in Sources */,
-				937CDBAB25AD797A0090EDC7 /* InfoScreenViewController.swift in Sources */,
+				937CDBAB25AD797A0090EDC7 /* FavoritsScreenViewController.swift in Sources */,
 				931D945125AC140200C0DCD1 /* OnboardingCoordinator.swift in Sources */,
 				93363EB32565A998007F522D /* Coordinator.swift in Sources */,
 				936DC85325AB5DBE001B5717 /* DataService.swift in Sources */,

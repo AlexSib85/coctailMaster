@@ -50,11 +50,6 @@ class DrinkListViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
-
-    @objc
-    private func back() {
-        print("Back tapped")
-    }
 }
 
 extension DrinkListViewController: DrinkListViewModelOutput {
@@ -78,6 +73,5 @@ extension DrinkListViewController: UITableViewDataSource {
 extension DrinkListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath)
     }
 }

@@ -11,7 +11,7 @@ protocol InfoScreenViewModelOutput: AnyObject {
 
 }
 
-class InfoScreenViewModel {
+class FavoritsScreenViewModel {
 
     private var dataService: DataService
 

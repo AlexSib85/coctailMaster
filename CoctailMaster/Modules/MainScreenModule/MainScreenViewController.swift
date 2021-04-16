@@ -63,7 +63,6 @@ extension MainScreenViewController: UITableViewDataSource {
 extension MainScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath)
         if let ingridient = viewModel.ingridients[safe: indexPath.row] {
             viewModel.selected(ingridient: ingridient)
         }

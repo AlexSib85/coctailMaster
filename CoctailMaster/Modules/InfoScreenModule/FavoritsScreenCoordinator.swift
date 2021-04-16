@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfoScreenCoordinator: Coordinator {
+class FavoritsScreenCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController!
     weak var parentCoordinator: AppCoordinator?
@@ -18,14 +18,14 @@ class InfoScreenCoordinator: Coordinator {
     }
 
     func start() {
-        AppContainer.shared.register { InfoScreenViewModel(dataService: $0) }
+        AppContainer.shared.register { FavoritsScreenViewModel(dataService: $0) }
             .lifetime(.objectGraph)
 
-        AppContainer.shared.register { InfoScreenViewController(nibName: nil, bundle: nil) }
+        AppContainer.shared.register { FavoritsScreenViewController(nibName: nil, bundle: nil) }
             .injection { $0.viewModel = $1 }
             .lifetime(.objectGraph)
 
-        let viewController: InfoScreenViewController = AppContainer.shared.resolve()
+        let viewController: FavoritsScreenViewController = AppContainer.shared.resolve()
 
         navigationController.pushViewController(viewController, animated: true)
     }

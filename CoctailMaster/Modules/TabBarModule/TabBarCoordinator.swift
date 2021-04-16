@@ -20,30 +20,30 @@ class TabBarCoordinator: Coordinator {
         let tabBarController = TabBarController()
         tabBarController.coordinator = self
 
-        let topRatedNavigationController = UINavigationController()
-        topRatedNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
-        AppContainer.shared.extensions(for: MainScreenCoordinator.self)?.setArgs(topRatedNavigationController)
-        let topRatedCoordinator: MainScreenCoordinator = AppContainer.shared.resolve()
+        let mainScreenNavigationController = UINavigationController()
+        mainScreenNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        AppContainer.shared.extensions(for: MainScreenCoordinator.self)?.setArgs(mainScreenNavigationController)
+        let mainScreenCoordinator: MainScreenCoordinator = AppContainer.shared.resolve()
 
         let searchNavigationController = UINavigationController()
         searchNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
         AppContainer.shared.extensions(for: SearchScreenCoordinator.self)?.setArgs(searchNavigationController)
         let searchCoordinator: SearchScreenCoordinator = AppContainer.shared.resolve()
 
-        let historyNavigationController = UINavigationController()
-        historyNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
-        let historyCoordinator = InfoScreenCoordinator(navigationController: historyNavigationController)
+        let favoritsNavigationController = UINavigationController()
+        favoritsNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
+        let favoritsCoordinator = FavoritsScreenCoordinator(navigationController: favoritsNavigationController)
 
-        tabBarController.viewControllers = [topRatedNavigationController,
+        tabBarController.viewControllers = [mainScreenNavigationController,
                                             searchNavigationController,
-                                            historyNavigationController]
+                                            favoritsNavigationController]
 
-        childCoordinators.append(topRatedCoordinator)
-        topRatedCoordinator.start()
+        childCoordinators.append(mainScreenCoordinator)
+        mainScreenCoordinator.start()
         childCoordinators.append(searchCoordinator)
         searchCoordinator.start()
-        childCoordinators.append(historyCoordinator)
-        historyCoordinator.start()
+        childCoordinators.append(favoritsCoordinator)
+        favoritsCoordinator.start()
 
         let isNavigationStackEmpty = navigationController.viewControllers.isEmpty
         navigationController.pushViewController(tabBarController, animated: true)
