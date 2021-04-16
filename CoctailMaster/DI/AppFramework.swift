@@ -14,7 +14,9 @@ public class AppFramework: DIFramework {
             .as(NetworkService.self)
             .lifetime(.single)
 
-        container.register { DataServiceImpl(networkService: $0) }
+        container.register { FileService<DrinkModel>(fileName: Constant.favoriteDrinksFileName) }
+
+        container.register { DataServiceImpl(networkService: $0, drinksFileService: $1) }
             .as(DataService.self)
             .lifetime(.single)
     }

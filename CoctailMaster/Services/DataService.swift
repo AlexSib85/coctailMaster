@@ -12,14 +12,16 @@ protocol DataService {
     func getRandomDrink(closure: @escaping (Drink?, Error?) -> Void)
     func getDrinksListBy(ingridient: Ingridient, closure: @escaping ([Drink]?, Error?) -> Void)
     func searchDrinksBy(string: String, closure: @escaping ([DrinkModel]?, Error?) -> Void)
+    func saveFavorite(drinks: [DrinkModel])
 }
 
-//This service intented to be used for caching data
 class DataServiceImpl: DataService {
     private var networkService: NetworkService
+    private let drinksFileService: FileService<DrinkModel>
 
-    init(networkService: NetworkService) {
+    init(networkService: NetworkService, drinksFileService: FileService<DrinkModel>) {
         self.networkService = networkService
+        self.drinksFileService = drinksFileService
     }
 
     func getIngridientList(closure: @escaping ([Ingridient]?, Error?) -> Void) {
@@ -27,6 +29,16 @@ class DataServiceImpl: DataService {
         networkService.loadIngridientList { rootIngridients, error in
             if let rootIngridients = rootIngridients {
                 closure(rootIngridients.ingridients, nil)
+            } else {
+                closure(nil, error)
+            }
+        }
+    }
+
+    func getRandomDrink(closure: @escaping (Drink?, Error?) -> Void) {
+        networkService.loadRandomDrink { rootDrinks, error in
+            if let rootDrinks = rootDrinks, let drink = rootDrinks.drinks?.first {
+                closure(drink, nil)
             } else {
                 closure(nil, error)
             }
@@ -50,7 +62,9 @@ class DataServiceImpl: DataService {
     func searchDrinksBy(string: String, closure: @escaping ([DrinkModel]?, Error?) -> Void) {
         networkService.searchDrinkBy(string: string) { rootDrinks, error in
             if let rootDrinks = rootDrinks?.drinks {
-                let drinks = rootDrinks.map { DrinkModel(drink: $0) }
+                var drinks = rootDrinks.map { DrinkModel(drink: $0) }
+                let favoriteDrinks = self.favoriteDrinks()
+                self.addFavoriteDrinks(drinks: &drinks, favorite: favoriteDrinks)
                 closure(drinks, nil)
             } else {
                 closure(nil, error)
@@ -58,13 +72,19 @@ class DataServiceImpl: DataService {
         }
     }
 
-    func getRandomDrink(closure: @escaping (Drink?, Error?) -> Void) {
-        networkService.loadRandomDrink { rootDrinks, error in
-            if let rootDrinks = rootDrinks, let drink = rootDrinks.drinks?.first {
-                closure(drink, nil)
-            } else {
-                closure(nil, error)
+    private func addFavoriteDrinks(drinks: inout [DrinkModel], favorite: [DrinkModel]) {
+        drinks.indices.forEach {
+            if favorite.contains(drinks[$0]) {
+                drinks[$0].isFavorite = true
             }
         }
+    }
+
+    func favoriteDrinks() -> [DrinkModel] {
+        return drinksFileService.loadData()
+    }
+
+    func saveFavorite(drinks: [DrinkModel]) {
+        drinksFileService.saveData(stored: drinks)
     }
 }

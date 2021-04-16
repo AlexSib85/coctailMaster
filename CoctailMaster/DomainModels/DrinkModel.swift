@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DrinkModel {
+struct DrinkModel: Codable, Equatable {
 
     var id: Int
     var title: String
@@ -105,61 +105,11 @@ struct DrinkModel {
         self.isFavorite = false
     }
 
-//    public enum CodingKeys: String, CodingKey, CaseIterable {
-//        case idDrink
-//        case strDrink
-//        case strDrinkAlternate
-//        case strDrinkES
-//        case strDrinkDE
-//        case strDrinkFR
-//        case strDrinkZHHANS = "strDrinkZH-HANS"
-//        case strDrinkZHHANT = "strDrinkZH-HANT"
-//        case strTags
-//        case strVideo
-//        case strCategory
-//        case strIBA
-//        case strAlcoholic
-//        case strGlass
-//        case strInstructions
-//        case strInstructionsES
-//        case strInstructionsDE
-//        case strInstructionsFR
-//        case strInstructionsZHHANS = "strInstructionsZH-HANS"
-//        case strInstructionsZHHANT = "strInstructionsZH-HANT"
-//        case strDrinkThumb
-//        case strIngredient1
-//        case strIngredient2
-//        case strIngredient3
-//        case strIngredient4
-//        case strIngredient5
-//        case strIngredient6
-//        case strIngredient7
-//        case strIngredient8
-//        case strIngredient9
-//        case strIngredient10
-//        case strIngredient11
-//        case strIngredient12
-//        case strIngredient13
-//        case strIngredient14
-//        case strIngredient15
-//        case strMeasure1
-//        case strMeasure2
-//        case strMeasure3
-//        case strMeasure4
-//        case strMeasure5
-//        case strMeasure6
-//        case strMeasure7
-//        case strMeasure8
-//        case strMeasure9
-//        case strMeasure10
-//        case strMeasure11
-//        case strMeasure12
-//        case strMeasure13
-//        case strMeasure14
-//        case strMeasure15
-//        case strImageSource
-//        case strImageAttribution
-//        case strCreativeCommonsConfirmed
-//        case dateModified
-//    }
+    mutating func toggleFavorite() {
+        isFavorite.toggle()
+    }
+}
+
+func == (lhs: DrinkModel, rhs: DrinkModel) -> Bool {
+    return lhs.id == rhs.id && lhs.title == rhs.title
 }

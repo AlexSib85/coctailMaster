@@ -38,6 +38,7 @@
 		9357D5EB25AAF169003C9A3F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D5EA25AAF169003C9A3F /* Constants.swift */; };
 		9357D5F325AAF1EF003C9A3F /* RequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9357D5F225AAF1EF003C9A3F /* RequestList.swift */; };
 		936DC85325AB5DBE001B5717 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DC85225AB5DBE001B5717 /* DataService.swift */; };
+		93735EFB2627FF87006360CB /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93735EFA2627FF87006360CB /* FileService.swift */; };
 		937665792626AD0B00079A22 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937665782626AD0B00079A22 /* DrinkModel.swift */; };
 		937CDB9A25AD77EA0090EDC7 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDB9925AD77EA0090EDC7 /* TabBarCoordinator.swift */; };
 		937CDB9F25AD77F50090EDC7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDB9E25AD77F50090EDC7 /* TabBarController.swift */; };
@@ -113,6 +114,7 @@
 		9357D5EA25AAF169003C9A3F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9357D5F225AAF1EF003C9A3F /* RequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestList.swift; sourceTree = "<group>"; };
 		936DC85225AB5DBE001B5717 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		93735EFA2627FF87006360CB /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		937665782626AD0B00079A22 /* DrinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
 		937CDB9925AD77EA0090EDC7 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		937CDB9E25AD77F50090EDC7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				936DC85225AB5DBE001B5717 /* DataService.swift */,
 				93363F0A2565AE9F007F522D /* NetworkService.swift */,
 				9357D5F225AAF1EF003C9A3F /* RequestList.swift */,
+				93735EFA2627FF87006360CB /* FileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				9357D5C825A70DEE003C9A3F /* Drinks.swift in Sources */,
 				931AB57E262322690071F400 /* DrinkListViewModel.swift in Sources */,
 				931D946525AC15E600C0DCD1 /* UserDefaults.swift in Sources */,
+				93735EFB2627FF87006360CB /* FileService.swift in Sources */,
 				931AB57D262322690071F400 /* DrinkListCoordinator.swift in Sources */,
 				937CDBAD25AD797A0090EDC7 /* InfoScreenViewModel.swift in Sources */,
 				931AB5952623363B0071F400 /* UIFramework.swift in Sources */,

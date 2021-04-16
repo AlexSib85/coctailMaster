@@ -61,6 +61,7 @@ extension SearchScreenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = viewModel.drinks[safe: indexPath.row]?.title
+        cell.imageView?.image = viewModel.drinks[safe: indexPath.row]?.isFavorite ?? false ? R.image.favorite_active() : R.image.favorite_inactive()
         return cell
     }
 }
@@ -68,6 +69,7 @@ extension SearchScreenViewController: UITableViewDataSource {
 extension SearchScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.selectedCell(at: indexPath.row)
         print("indexPath \(indexPath)")
     }
 }

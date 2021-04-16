@@ -36,6 +36,14 @@ class SearchScreenViewModel {
 
     }
 
+    func selectedCell(at index: Int) {
+        if drinks.indices.contains(index) {
+            drinks[index].toggleFavorite()
+            dataService.saveFavorite(drinks: drinks.filter { $0.isFavorite })
+            output?.needUpdateTableView()
+        }
+    }
+
     @objc
     private func startSearchDrink() {
         dataService.searchDrinksBy(string: searchString) { drinks, error in
