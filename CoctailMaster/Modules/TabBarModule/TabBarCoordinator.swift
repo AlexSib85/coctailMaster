@@ -21,7 +21,7 @@ class TabBarCoordinator: Coordinator {
         tabBarController.coordinator = self
 
         let mainScreenNavigationController = UINavigationController()
-        mainScreenNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        mainScreenNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: 0)
         AppContainer.shared.extensions(for: MainScreenCoordinator.self)?.setArgs(mainScreenNavigationController)
         let mainScreenCoordinator: MainScreenCoordinator = AppContainer.shared.resolve()
 
@@ -31,7 +31,7 @@ class TabBarCoordinator: Coordinator {
         let searchCoordinator: SearchScreenCoordinator = AppContainer.shared.resolve()
 
         let favoritsNavigationController = UINavigationController()
-        favoritsNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
+        favoritsNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
         AppContainer.shared.extensions(for: FavoritsScreenCoordinator.self)?.setArgs(favoritsNavigationController)
         let favoritsCoordinator: FavoritsScreenCoordinator = AppContainer.shared.resolve()
 
