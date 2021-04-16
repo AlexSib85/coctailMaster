@@ -45,5 +45,18 @@ public class UIFramework: DIFramework {
             .as(SearchScreenViewModelOutput.self)
             .injection { $0.viewModel = $1 }
             .lifetime(.objectGraph)
+
+        container.register { FavoritsScreenCoordinator(navigationController: arg($0)) }
+            .lifetime(.perRun(.strong))
+
+        container.register { FavoritsScreenViewModel(dataService: $0) }
+            .injection(cycle: true) { $0.output = $1 }
+            .lifetime(.objectGraph)
+
+        container.register { FavoritsScreenViewController(nibName: nil, bundle: nil) }
+            .as(FavoritsScreenViewController.self)
+            .as(FavoritsScreenViewModelOutput.self)
+            .injection { $0.viewModel = $1 }
+            .lifetime(.objectGraph)
     }
 }

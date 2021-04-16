@@ -32,7 +32,8 @@ class TabBarCoordinator: Coordinator {
 
         let favoritsNavigationController = UINavigationController()
         favoritsNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
-        let favoritsCoordinator = FavoritsScreenCoordinator(navigationController: favoritsNavigationController)
+        AppContainer.shared.extensions(for: FavoritsScreenCoordinator.self)?.setArgs(favoritsNavigationController)
+        let favoritsCoordinator: FavoritsScreenCoordinator = AppContainer.shared.resolve()
 
         tabBarController.viewControllers = [mainScreenNavigationController,
                                             searchNavigationController,

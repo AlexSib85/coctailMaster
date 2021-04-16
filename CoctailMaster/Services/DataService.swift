@@ -12,6 +12,7 @@ protocol DataService {
     func getRandomDrink(closure: @escaping (Drink?, Error?) -> Void)
     func getDrinksListBy(ingridient: Ingridient, closure: @escaping ([Drink]?, Error?) -> Void)
     func searchDrinksBy(string: String, closure: @escaping ([DrinkModel]?, Error?) -> Void)
+    func favoriteDrinks() -> [DrinkModel]
     func saveFavorite(drinks: [DrinkModel])
 }
 
@@ -72,19 +73,19 @@ class DataServiceImpl: DataService {
         }
     }
 
-    private func addFavoriteDrinks(drinks: inout [DrinkModel], favorite: [DrinkModel]) {
-        drinks.indices.forEach {
-            if favorite.contains(drinks[$0]) {
-                drinks[$0].isFavorite = true
-            }
-        }
-    }
-
     func favoriteDrinks() -> [DrinkModel] {
         return drinksFileService.loadData()
     }
 
     func saveFavorite(drinks: [DrinkModel]) {
         drinksFileService.saveData(stored: drinks)
+    }
+
+    private func addFavoriteDrinks(drinks: inout [DrinkModel], favorite: [DrinkModel]) {
+        drinks.indices.forEach {
+            if favorite.contains(drinks[$0]) {
+                drinks[$0].isFavorite = true
+            }
+        }
     }
 }
