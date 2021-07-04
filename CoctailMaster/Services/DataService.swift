@@ -10,7 +10,7 @@ import Foundation
 protocol DataService {
     func getIngridientList(closure: @escaping ([Ingridient]?, Error?) -> Void)
     func getRandomDrink(closure: @escaping (Drink?, Error?) -> Void)
-    func getDrinksListBy(ingridient: Ingridient, closure: @escaping ([Drink]?, Error?) -> Void)
+    func getDrinksListBy(ingridient: Ingridient, closure: @escaping ([DrinkModel]?, Error?) -> Void)
     func searchDrinksBy(string: String, closure: @escaping ([DrinkModel]?, Error?) -> Void)
     func favoriteDrinks() -> [DrinkModel]
     func saveFavorite(drinks: [DrinkModel])
@@ -46,14 +46,17 @@ class DataServiceImpl: DataService {
         }
     }
 
-    func getDrinksListBy(ingridient: Ingridient, closure: @escaping ([Drink]?, Error?) -> Void) {
+    func getDrinksListBy(ingridient: Ingridient, closure: @escaping ([DrinkModel]?, Error?) -> Void) {
         guard let ingridientString = ingridient.strIngredient1 else {
             closure([], nil)
             return
         }
         networkService.loadDrinkListBy(ingridient: ingridientString) { rootDrinks, error in
-            if let rootDrinks = rootDrinks {
-                closure(rootDrinks.drinks, nil)
+            if let rootDrinks = rootDrinks?.drinks {
+                var drinks = rootDrinks.map { DrinkModel(drink: $0) }
+                let favoriteDrinks = self.favoriteDrinks()
+                self.addFavoriteDrinks(drinks: &drinks, favorite: favoriteDrinks)
+                closure(drinks, nil)
             } else {
                 closure(nil, error)
             }

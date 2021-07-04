@@ -32,6 +32,7 @@ class FavoritsScreenViewController: UIViewController {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.defaultCellIdentifier)
         view.addSubview(tableView)
 
         makeConstraints()
@@ -57,10 +58,12 @@ extension FavoritsScreenViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.favoriteDrinks[safe: indexPath.row]?.title
-        cell.imageView?.image = viewModel.favoriteDrinks[safe: indexPath.row]?.isFavorite ?? false ? R.image.favorite_active() : R.image.favorite_inactive()
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constant.defaultCellIdentifier) {
+            cell.textLabel?.text = viewModel.favoriteDrinks[safe: indexPath.row]?.title
+            cell.imageView?.image = viewModel.favoriteDrinks[safe: indexPath.row]?.isFavorite ?? false ? R.image.favorite_active() : R.image.favorite_inactive()
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 

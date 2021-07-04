@@ -27,10 +27,6 @@ class DrinkListViewController: UIViewController {
         }
     }
 
-    deinit {
-        print("DEINIT DrinkListViewController")
-    }
-
     private func setupUI() {
         title = "Список напитков"
         view.backgroundColor = .lightBlue
@@ -39,6 +35,7 @@ class DrinkListViewController: UIViewController {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.defaultCellIdentifier)
         view.addSubview(tableView)
 
         makeConstraints()
@@ -64,9 +61,11 @@ extension DrinkListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.drinks[safe: indexPath.row]?.strDrink
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constant.defaultCellIdentifier) {
+            cell.textLabel?.text = viewModel.drinks[safe: indexPath.row]?.title
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 

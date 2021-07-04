@@ -17,16 +17,12 @@ class DrinkListViewModel {
     weak var output: DrinkListViewModelOutput?
     weak var coordinator: DrinkListCoordinator?
     var ingridient: Ingridient
-    private(set) var drinks: [Drink] = []
+    private(set) var drinks: [DrinkModel] = []
 
     init(dataService: DataService, coordinator: DrinkListCoordinator?, ingridient: Ingridient) {
         self.dataService = dataService
         self.coordinator = coordinator
         self.ingridient = ingridient
-    }
-
-    deinit {
-        print("DEINIT DrinkListViewModel")
     }
 
     func viewLoaded() {
@@ -40,7 +36,7 @@ class DrinkListViewModel {
     private func loadData() {
         dataService.getDrinksListBy(ingridient: ingridient) { drinks, error in
             if let error = error {
-                print("Error!!!!!!!!!!!!!!!!! \(error)")
+                print("Error! \(#file) \(#function) \(error)")
                 return
             }
             self.drinks = drinks ?? []

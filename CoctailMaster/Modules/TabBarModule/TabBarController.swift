@@ -13,8 +13,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         self.tabBar.layer.masksToBounds = true
-        self.tabBar.barStyle = .black
-        self.tabBar.barTintColor = .white
+        self.tabBar.barTintColor = .commonBackground
         self.tabBar.tintColor = UIColor.orange
 
         self.tabBar.layer.shadowColor = UIColor.lightGray.cgColor

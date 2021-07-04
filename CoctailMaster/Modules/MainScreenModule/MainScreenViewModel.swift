@@ -34,7 +34,7 @@ class MainScreenViewModel {
     private func loadData() {
         dataService.getIngridientList { ingridients, error in
             if let error = error {
-                print("Error!!!!!!!!!!!!!!!!! \(error)")
+                print("Error! \(#file) \(#function) \(error)")
                 return
             }
             self.ingridients = ingridients ?? []

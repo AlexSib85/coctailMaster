@@ -23,12 +23,13 @@ class SearchScreenViewController: UIViewController {
     private func setupUI() {
 
         title = "Поиск напитков"
-        view.backgroundColor = .white
+        view.backgroundColor = .commonBackground
 
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.defaultCellIdentifier)
         view.addSubview(tableView)
 
         searchController.searchResultsUpdater = self
@@ -59,10 +60,12 @@ extension SearchScreenViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.drinks[safe: indexPath.row]?.title
-        cell.imageView?.image = viewModel.drinks[safe: indexPath.row]?.isFavorite ?? false ? R.image.favorite_active() : R.image.favorite_inactive()
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constant.defaultCellIdentifier) {
+            cell.textLabel?.text = viewModel.drinks[safe: indexPath.row]?.title
+            cell.imageView?.image = viewModel.drinks[safe: indexPath.row]?.isFavorite ?? false ? R.image.favorite_active() : R.image.favorite_inactive()
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 

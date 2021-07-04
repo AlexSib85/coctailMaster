@@ -283,15 +283,15 @@
 			path = TabBarModule;
 			sourceTree = "<group>";
 		};
-		937CDBA325AD797A0090EDC7 /* InfoScreenModule */ = {
+		937CDBA325AD797A0090EDC7 /* FavoritsScreenModule */ = {
 			isa = PBXGroup;
 			children = (
 				937CDBA525AD797A0090EDC7 /* FavoritsScreenCoordinator.swift */,
 				937CDBA625AD797A0090EDC7 /* FavoritsScreenViewModel.swift */,
 				937CDBA425AD797A0090EDC7 /* FavoritsScreenViewController.swift */,
 			);
-			name = InfoScreenModule;
-			path = CoctailMaster/Modules/InfoScreenModule;
+			name = FavoritsScreenModule;
+			path = CoctailMaster/Modules/FavoritsScreenModule;
 			sourceTree = SOURCE_ROOT;
 		};
 		937CDBA725AD797A0090EDC7 /* SearchScreenModule */ = {
@@ -327,7 +327,7 @@
 				931D944325AC138F00C0DCD1 /* MainScreenModule */,
 				931AB5782623220C0071F400 /* DrinkListModule */,
 				937CDBA725AD797A0090EDC7 /* SearchScreenModule */,
-				937CDBA325AD797A0090EDC7 /* InfoScreenModule */,
+				937CDBA325AD797A0090EDC7 /* FavoritsScreenModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

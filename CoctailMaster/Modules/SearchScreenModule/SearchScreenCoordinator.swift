@@ -16,10 +16,6 @@ class SearchScreenCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
-    deinit {
-        print("DEINIT SearchScreenCoordinator")
-    }
-
     func start() {
         let viewController: SearchScreenViewController = AppContainer.shared.resolve()
         navigationController.pushViewController(viewController, animated: true)

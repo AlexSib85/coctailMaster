@@ -18,10 +18,6 @@ class DrinkListCoordinator: Coordinator {
         self.ingridient = ingridient
     }
 
-    deinit {
-        print("DEINIT DrinkListCoordinator")
-    }
-
     func start() {
         AppContainer.shared.extensions(for: DrinkListViewModel.self)?.setArgs(ingridient)
         let viewController: DrinkListViewController = AppContainer.shared.resolve()

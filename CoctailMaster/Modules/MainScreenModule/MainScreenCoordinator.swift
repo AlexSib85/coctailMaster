@@ -16,10 +16,6 @@ class MainScreenCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
-    deinit {
-        print("DEINIT MainScreenCoordinator")
-    }
-
     func start() {
         let viewController: MainScreenViewController = AppContainer.shared.resolve()
         navigationController.pushViewController(viewController, animated: false)

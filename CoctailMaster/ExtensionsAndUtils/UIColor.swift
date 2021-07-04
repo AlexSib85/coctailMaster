@@ -8,6 +8,17 @@
 import UIKit
 
 extension UIColor {
+
+    static func color(light: UIColor, dark: UIColor) -> UIColor {
+        if #available(iOS 13, *) {
+            return UIColor { traitCollection in
+                return traitCollection.userInterfaceStyle == .dark ? dark : light
+            }
+        } else {
+            return light
+        }
+    }
+
     convenience init(_ hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
@@ -41,8 +52,8 @@ extension UIColor {
         }
     }
 
-    static let commonBlue = UIColor("#53ADF0")
-    static let lightBlue = UIColor("#d6ecfc")
-    static let lightMint = UIColor("#cbedcf")
-    static let lightPink = UIColor("#FFD3B5")
+    static let commonBlue = UIColor.color(light: UIColor("#53ADF0"), dark: .systemGray)
+    static let lightBlue = UIColor.color(light: UIColor("#d6ecfc"), dark: .systemGray)
+    static let lightMint = UIColor.color(light: UIColor("#cbedcf"), dark: systemGray)
+    static let commonBackground = UIColor.color(light: .white, dark: .darkText)
 }

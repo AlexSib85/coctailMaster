@@ -14,4 +14,5 @@ enum Constant {
     }
 
     static let favoriteDrinksFileName = "favoriteDrinks"
+    static let defaultCellIdentifier = "cell"
 }

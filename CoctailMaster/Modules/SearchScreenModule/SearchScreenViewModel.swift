@@ -48,7 +48,7 @@ class SearchScreenViewModel {
     private func startSearchDrink() {
         dataService.searchDrinksBy(string: searchString) { drinks, error in
             if let error = error {
-                print("Error!!!!!!!!!!!!!!!!! \(error)")
+                print("Error! \(#file) \(#function) \(error)")
                 return
             }
             self.drinks = drinks ?? []

@@ -29,6 +29,7 @@ class MainScreenViewController: UIViewController {
         tableView.dataSource = self
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.defaultCellIdentifier)
         view.addSubview(tableView)
 
         makeConstraints()
@@ -54,9 +55,11 @@ extension MainScreenViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.ingridients[safe: indexPath.row]?.strIngredient1
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constant.defaultCellIdentifier) {
+            cell.textLabel?.text = viewModel.ingridients[safe: indexPath.row]?.strIngredient1
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 
