@@ -17,6 +17,7 @@ class SearchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        subscribeForNotifications()
         viewModel.viewLoaded()
     }
 
@@ -35,6 +36,7 @@ class SearchScreenViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Поиск"
+        navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
 
         makeConstraints()
@@ -45,6 +47,33 @@ class SearchScreenViewController: UIViewController {
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+
+    private func subscribeForNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+    }
+
+    @objc
+    private func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        var heightOffset = keyboardSize.height
+        if let delta = tabBarController?.tabBar.frame.height {
+            heightOffset -= delta
+        }
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: heightOffset, right: 0.0)
+        tableView.contentInset = contentInsets
+        tableView.scrollIndicatorInsets = contentInsets
+    }
+
+    @objc
+    private func keyboardWillHide(notification: NSNotification) {
+        let contentInsets = UIEdgeInsets.zero
+        tableView.contentInset = contentInsets
+        tableView.scrollIndicatorInsets = contentInsets
     }
 }
 
