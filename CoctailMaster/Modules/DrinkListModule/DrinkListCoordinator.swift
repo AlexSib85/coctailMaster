@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DITranquillity
 
 class DrinkListCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
@@ -19,8 +20,9 @@ class DrinkListCoordinator: Coordinator {
     }
 
     func start() {
-        AppContainer.shared.extensions(for: DrinkListViewModel.self)?.setArgs(ingridient)
-        let viewController: DrinkListViewController = AppContainer.shared.resolve()
+        var arguments = AnyArguments()
+        arguments.addArgs(for: DrinkListViewModel.self, args: ingridient)
+        let viewController: DrinkListViewController = AppContainer.shared.resolve(arguments: arguments)
         navigationController.pushViewController(viewController, animated: true)
     }
 

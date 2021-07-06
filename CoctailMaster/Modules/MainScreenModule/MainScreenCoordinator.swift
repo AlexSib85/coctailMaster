@@ -22,8 +22,7 @@ class MainScreenCoordinator: Coordinator {
     }
 
     func showDrinksWith(ingridient: Ingridient) {
-        AppContainer.shared.extensions(for: DrinkListCoordinator.self)?.setArgs(navigationController, ingridient)
-        let child: DrinkListCoordinator = AppContainer.shared.resolve()
+        let child: DrinkListCoordinator = AppContainer.shared.resolve(args: navigationController, ingridient)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()

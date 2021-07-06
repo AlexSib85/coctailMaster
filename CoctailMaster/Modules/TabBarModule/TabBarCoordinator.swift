@@ -22,18 +22,15 @@ class TabBarCoordinator: Coordinator {
 
         let mainScreenNavigationController = UINavigationController()
         mainScreenNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: 0)
-        AppContainer.shared.extensions(for: MainScreenCoordinator.self)?.setArgs(mainScreenNavigationController)
-        let mainScreenCoordinator: MainScreenCoordinator = AppContainer.shared.resolve()
+        let mainScreenCoordinator: MainScreenCoordinator = AppContainer.shared.resolve(args: mainScreenNavigationController)
 
         let searchNavigationController = UINavigationController()
         searchNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
-        AppContainer.shared.extensions(for: SearchScreenCoordinator.self)?.setArgs(searchNavigationController)
-        let searchCoordinator: SearchScreenCoordinator = AppContainer.shared.resolve()
+        let searchCoordinator: SearchScreenCoordinator = AppContainer.shared.resolve(args: searchNavigationController)
 
         let favoritsNavigationController = UINavigationController()
         favoritsNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
-        AppContainer.shared.extensions(for: FavoritsScreenCoordinator.self)?.setArgs(favoritsNavigationController)
-        let favoritsCoordinator: FavoritsScreenCoordinator = AppContainer.shared.resolve()
+        let favoritsCoordinator: FavoritsScreenCoordinator = AppContainer.shared.resolve(args: favoritsNavigationController)
 
         tabBarController.viewControllers = [mainScreenNavigationController,
                                             searchNavigationController,
